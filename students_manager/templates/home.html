@@ -1,3 +1,15 @@
 <html>
-    <title>Students Manager</title>
+    <head>
+        <title>Students Manager</title>
+    </head>
+    <body>
+        <h1>Students</h1>
+        <form method="POST">
+            <input name="student_text" id="id_new_student" placeholder="Enter a student" />
+                {% csrf_token %}
+        </form>
+        <table id="id_list_table">
+             <tr><td>{{ new_student_text }}</td></tr>
+        </table>
+    </body>
 </html>
