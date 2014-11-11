@@ -17,7 +17,7 @@ class NewVisitorTest(unittest.TestCase):
         rows = table.find_elements_by_tag_name('tr')
         self.assertIn(row_text, [row.text for row in rows])
 
-    def test_can_start_a_list_and_retrieve_it_later(self):
+    def test_can_start_a_students_list_and_retrieve_it_later(self):
         # Edith headmaster has heard about a cool new online student management
         # She goes to check out its homepage
         self.browser.get('http://localhost:8000')
@@ -60,6 +60,51 @@ class NewVisitorTest(unittest.TestCase):
         self.check_for_row_in_list_table('Eddie Seigneur')
 
         self.fail('Finish the test!')
+
+    def test_can_start_a_groups_list_and_retrieve_it_later(self):
+        # Edith headmaster has heard about a cool new online student management
+        # She goes to check out its homepage
+        self.browser.get('http://localhost:8000')
+
+        # She notices the page title and header mention student manager
+        self.assertIn('Students Manager', self.browser.title)
+
+        #There is a link to /group page
+        groups_url = self.browser.find_element_by_link_text('Groups').get_attribute('href')
+        self.assertIn('groups', groups_url)
+        self.browser.get(groups_url)
+        header_text = self.browser.find_element_by_tag_name('h1').text
+        self.assertIn('Groups', header_text)
+
+        # She is invited to enter a group straight away
+        inputbox = self.browser.find_element_by_id('id_new_group')
+        self.assertEqual(
+                inputbox.get_attribute('placeholder'),
+                'Enter a group'
+        )
+
+        # She types "1A" into a text box
+        inputbox.send_keys('1A')
+
+        # When she hits enter, the page updates, and now the page lists
+        # "1A" as an item in a group list table
+        inputbox.send_keys(Keys.ENTER)
+        import time
+        time.sleep(2)
+        self.check_for_row_in_list_table('1A')
+
+        # There is still a text box inviting her to add another group. She
+        # enters "2C"
+        inputbox = self.browser.find_element_by_id('id_new_group')
+        inputbox.send_keys('2C')
+        inputbox.send_keys(Keys.ENTER)
+
+        # The page updates again, and now shows both items on her list
+        self.check_for_row_in_list_table('1A')
+        self.check_for_row_in_list_table('2C')
+
+        self.fail('Finish the test!')
+
 
 if __name__ == '__main__':
     unittest.main()

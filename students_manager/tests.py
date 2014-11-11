@@ -2,8 +2,8 @@ from django.core.urlresolvers import resolve
 from django.test import TestCase
 from django.http import HttpRequest
 from django.template.loader import render_to_string
-from students_manager.views import home_page, students_page
-from students_manager.models import Student
+from students_manager.views import home_page, students_page, groups_page
+from students_manager.models import Student,Group
 
 
 class HomePageTest(TestCase):
@@ -17,6 +17,9 @@ class HomePageTest(TestCase):
         response = home_page(request)
         expected_html = render_to_string('home.html')
         self.assertEqual(response.content.decode(), expected_html)
+
+
+class StudentsPageTest(TestCase):
 
     def test_students_page_returns_correct_html(self):
         request = HttpRequest()
@@ -77,3 +80,66 @@ class HomePageTest(TestCase):
 
         self.assertIn('student 1', response.content.decode())
         self.assertIn('student 2', response.content.decode())
+
+
+class GroupsPageTest(TestCase):
+
+    def test_groups_page_returns_correct_html(self):
+        request = HttpRequest()
+        response = groups_page(request)
+        expected_html = render_to_string('groups.html')
+        self.assertEqual(response.content.decode(), expected_html)
+
+
+    def test_groups_page_can_save_a_POST_request(self):
+        request = HttpRequest()
+        request.method = 'POST'
+        request.POST['group_name'] = 'A new group'
+
+        response = groups_page(request)
+
+        self.assertEqual(Group.objects.count(), 1)
+        new_group = Group.objects.first()
+        self.assertEqual(new_group.name, 'A new group')
+
+    def test_groups_page_redirects_after_POST(self):
+        request = HttpRequest()
+        request.method = 'POST'
+        request.POST['group_name'] = 'A new group'
+
+        response = groups_page(request)
+
+        self.assertEqual(response.status_code, 302)
+        self.assertEqual(response['location'], '/groups') # notharcoded
+
+    def test_saving_and_retrieving_groups(self):
+        first_group = Group()
+        first_group.name = 'The first (ever) group'
+        first_group.save()
+
+        second_group = Group()
+        second_group.name = 'Group the second'
+        second_group.save()
+
+        saved_groups = Group.objects.all()
+        self.assertEqual(saved_groups.count(), 2)
+
+        first_saved_group = saved_groups[0]
+        second_saved_group = saved_groups[1]
+        self.assertEqual(first_saved_group.name, 'The first (ever) group')
+        self.assertEqual(second_saved_group.name, 'Group the second')
+
+    def test_groups_page_only_saves_groups_when_necessary(self):
+        request = HttpRequest()
+        groups_page(request)
+        self.assertEqual(Group.objects.count(), 0)
+
+    def test_groups_page_displays_all_list_items(self):
+        Group.objects.create(name='group 1')
+        Group.objects.create(name='group 2')
+
+        request = HttpRequest()
+        response = groups_page(request)
+
+        self.assertIn('group 1', response.content.decode())
+        self.assertIn('group 2', response.content.decode())
