@@ -2,7 +2,7 @@ from django.core.urlresolvers import resolve
 from django.test import TestCase
 from django.http import HttpRequest
 from django.template.loader import render_to_string
-from students_manager.views import home_page
+from students_manager.views import home_page, students_page
 from students_manager.models import Student
 
 
@@ -18,34 +18,41 @@ class HomePageTest(TestCase):
         expected_html = render_to_string('home.html')
         self.assertEqual(response.content.decode(), expected_html)
 
-    def test_home_page_can_save_a_POST_request(self):
+    def test_students_page_returns_correct_html(self):
+        request = HttpRequest()
+        response = students_page(request)
+        expected_html = render_to_string('students.html')
+        self.assertEqual(response.content.decode(), expected_html)
+
+
+    def test_students_page_can_save_a_POST_request(self):
         request = HttpRequest()
         request.method = 'POST'
-        request.POST['student_text'] = 'A new student'
+        request.POST['student_name'] = 'A new student'
 
-        response = home_page(request)
+        response = students_page(request)
 
         self.assertEqual(Student.objects.count(), 1)
         new_student = Student.objects.first()
-        self.assertEqual(new_student.text, 'A new student')
+        self.assertEqual(new_student.name, 'A new student')
 
-    def test_home_page_redirects_after_POST(self):
+    def test_students_page_redirects_after_POST(self):
         request = HttpRequest()
         request.method = 'POST'
-        request.POST['student_text'] = 'A new student'
+        request.POST['student_name'] = 'A new student'
 
-        response = home_page(request)
+        response = students_page(request)
 
         self.assertEqual(response.status_code, 302)
-        self.assertEqual(response['location'], '/')
+        self.assertEqual(response['location'], '/students') # notharcoded
 
     def test_saving_and_retrieving_students(self):
         first_student = Student()
-        first_student.text = 'The first (ever) student'
+        first_student.name = 'The first (ever) student'
         first_student.save()
 
         second_student = Student()
-        second_student.text = 'Student the second'
+        second_student.name = 'Student the second'
         second_student.save()
 
         saved_students = Student.objects.all()
@@ -53,20 +60,20 @@ class HomePageTest(TestCase):
 
         first_saved_student = saved_students[0]
         second_saved_student = saved_students[1]
-        self.assertEqual(first_saved_student.text, 'The first (ever) student')
-        self.assertEqual(second_saved_student.text, 'Student the second')
+        self.assertEqual(first_saved_student.name, 'The first (ever) student')
+        self.assertEqual(second_saved_student.name, 'Student the second')
 
-    def test_home_page_only_saves_students_when_necessary(self):
+    def test_students_page_only_saves_students_when_necessary(self):
         request = HttpRequest()
-        home_page(request)
+        students_page(request)
         self.assertEqual(Student.objects.count(), 0)
 
-    def test_home_page_displays_all_list_items(self):
-        Student.objects.create(text='student 1')
-        Student.objects.create(text='student 2')
+    def test_students_page_displays_all_list_items(self):
+        Student.objects.create(name='student 1')
+        Student.objects.create(name='student 2')
 
         request = HttpRequest()
-        response = home_page(request)
+        response = students_page(request)
 
         self.assertIn('student 1', response.content.decode())
         self.assertIn('student 2', response.content.decode())

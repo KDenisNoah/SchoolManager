@@ -4,9 +4,12 @@ from students_manager.models import Student
 
 
 def home_page(request):
+    return render(request, 'home.html')
+
+def students_page(request):
     if request.method == 'POST':
-        Student.objects.create(text=request.POST['student_text'])
-        return redirect('/')
+        Student.objects.create(name=request.POST['student_name'])
+        return redirect('/students')
 
     students = Student.objects.all()
-    return render(request, 'home.html', {'students': students})
+    return render(request, 'students.html', {'students': students})

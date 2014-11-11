@@ -24,6 +24,11 @@ class NewVisitorTest(unittest.TestCase):
 
         # She notices the page title and header mention student manager
         self.assertIn('Students Manager', self.browser.title)
+
+        #There is a link to /students page
+        students_url = self.browser.find_element_by_link_text('Students').get_attribute('href')
+        self.assertIn('students', students_url)
+        self.browser.get(students_url)
         header_text = self.browser.find_element_by_tag_name('h1').text
         self.assertIn('Students', header_text)
 
@@ -40,6 +45,8 @@ class NewVisitorTest(unittest.TestCase):
         # When she hits enter, the page updates, and now the page lists
         # "Piotr Ugrumov" as an item in a student list table
         inputbox.send_keys(Keys.ENTER)
+        import time
+        time.sleep(2)
         self.check_for_row_in_list_table('Piotr Ugrumov')
 
         # There is still a text box inviting her to add another student. She
