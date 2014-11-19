@@ -1,0 +1,20 @@
+<html>
+    <head>
+        <title>School QMS</title>
+    </head>
+    <body>
+    <a href="{% url 'qms' %}">Home</a>
+    <a href="{% url 'processes' %}">Processes</a>
+    <a href="{% url 'procedures' %}">Procedures</a>
+        <h1>Procedures</h1>
+        <form method="POST">
+            <input name="procedure_name" id="id_new_procedure" placeholder="Enter a procedure" />
+                {% csrf_token %}
+        </form>
+        <table id="id_list_table">
+                 {% for procedure in procedures %}
+                    <tr><td>{{ procedure.name }}</td></tr>
+                {% endfor %}
+        </table>
+    </body>
+</html>
