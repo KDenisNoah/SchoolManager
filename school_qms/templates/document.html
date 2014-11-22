@@ -1,0 +1,22 @@
+<html>
+    <head>
+        <title>Documents Manager</title>
+    </head>
+    <body>
+        <h1>Document: {{ document.code}}</h1>
+        {{ document.name }}
+        <p>Procedure: <a href="../procedure/{{ document.procedure.id }}">{{ document.procedure }}</a></p>
+        <p>~{{ document.description }}</p>
+        <p><a href="{{ document.document_url}}">url</a></p>
+        {% if document.document_file %}
+        <p><a href="{{ document.document_file.url}}">file</a></p>
+        {% endif %}
+        <h1>Revisions</h1>
+        {% if revision %}
+        {% for rev in revision %}
+        <p>{{ rev.date }}: {{ rev.reason }}</p>
+        {% endfor %}
+        {% endif %}
+        <a href="../../revisions/{{ document.pk }}/">Add revision</a>
+    </body>
+</html>

@@ -1,0 +1,13 @@
+<html>
+    <head>
+        <title>Documents Manager</title>
+    </head>
+    <body>
+        <h1>Add revision</h1>
+             <form method="POST">
+                 {{ form.as_p}}
+                 <input type="submit" id="add_revision" value="OK">
+                {% csrf_token %}
+             <form>
+    </body>
+</html>
