@@ -6,7 +6,15 @@
         <h1>Document: {{ document.code}}</h1>
         {{ document.name }}
         <p>Procedure: <a href="../procedure/{{ document.procedure.id }}">{{ document.procedure }}</a></p>
-        <p>~{{ document.description }}</p>
+        <p>{{ document.description }}</p>
+        <p>Owner: {{ document.onwer }}</p>
+        <p>Creation date: {{ document.creation_date }} - Aprobation date: {{ document.aprobation_date }}</p>
+        {% if document.record %}
+        <p><b>It's a record</b></p>
+        {% endif %}
+        {% for recipient in document.recipients.all %}
+        <p>{{ recipient }}</p>
+        {% endfor %}
         <p><a href="{{ document.document_url}}">url</a></p>
         {% if document.document_file %}
         <p><a href="{{ document.document_file.url}}">file</a></p>

@@ -1,0 +1,19 @@
+<html>
+    <head>
+        <title>Documents Manager</title>
+    </head>
+    <body>
+        <h1>Recipients</h1>
+        <ul>
+        {% for recipient in Recipients %}
+            <li>{{ recipient.name }}</li>
+        {% endfor %}
+        </ul>
+        <h1>Add recipient</h1>
+             <form method="POST">
+                 {{ form.as_p}}
+                 <input type="submit" id="add_recipient" value="OK">
+                {% csrf_token %}
+             <form>
+    </body>
+</html>

@@ -13,6 +13,7 @@ class Process(models.Model):
 class Procedure(models.Model):
     name = models.TextField(default='')
     description = models.TextField(default='')
+    onwer = models.ForeignKey('Agent', default=1)
 
     def __str__(self):
         return self.name
@@ -33,7 +34,7 @@ class Document(models.Model):
     #location = models.ManyToMany('locations') # intranet, ...
     onwer = models.ForeignKey('Agent', default=1)
     #when_distribute = models.manytomany('dates')
-    #who_distribute_to = models.manytomay('Agent', default='')?  # tutors, headmaster, teachers, ...
+    recipients = models.ManyToManyField('Recipient', default='')
     #document = url or file?
     document_file = models.FileField(upload_to='documents',
          null=True, blank=True)
@@ -57,6 +58,13 @@ class Revision(models.Model):
 
 
 class Agent(models.Model):
+    name = models.TextField(default='')
+
+    def __str__(self):
+        return self.name
+
+
+class Recipient(models.Model):
     name = models.TextField(default='')
 
     def __str__(self):

@@ -1,7 +1,7 @@
 from django.http import HttpResponse
 from django.shortcuts import redirect, render
-from school_qms.models import Process, Procedure, Document, Agent, Revision
-from school_qms.forms import DocumentForm, AgentForm, RevisionForm
+from school_qms.models import Process, Procedure, Document, Agent, Revision, Recipient
+from school_qms.forms import DocumentForm, AgentForm, RevisionForm, RecipientForm
 
 
 def qms_page(request):
@@ -26,8 +26,11 @@ def procedures_page(request):
     return render(request, 'procedures.html', {'procedures': procedures})
 
 
-def documents_page(request):
-    if request.method == 'POST':
+def documents_page(request, doc_id=None):
+    if doc_id:
+        data = {'pk': doc_id}
+        f = DocumentForm(initial=data)
+    elif request.method == 'POST':
         f = DocumentForm(request.POST, request.FILES)
         if f.is_valid():
             doc = f.save()
@@ -58,6 +61,19 @@ def add_agent(request):
     Agents = Agent.objects.all()
     return render(request, 'add_agent.html',
          {'Agents': Agents, 'form': f})
+
+
+def add_recipient(request):
+    if request.method == 'POST':
+        f = RecipientForm(request.POST)
+        if f.is_valid():
+            f.save()
+    else:
+        f = RecipientForm()
+
+    Recipients = Recipient.objects.all()
+    return render(request, 'add_recipient.html',
+         {'Recipients': Recipients, 'form': f})
 
 
 def add_revision(request, doc_id=None):
