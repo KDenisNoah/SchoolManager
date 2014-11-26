@@ -1,8 +1,5 @@
-<html>
-    <head>
-        <title>School QMS</title>
-    </head>
-    <body>
+{% extends "base.html" %}
+{% block content %}
     <a href="{% url 'qms' %}">Home</a>
     <a href="{% url 'processes' %}">Processes</a>
     <a href="{% url 'procedures' %}">Procedures</a>
@@ -16,5 +13,4 @@
                     <tr><td>{{ process.name }}</td></tr>
                 {% endfor %}
         </table>
-    </body>
-</html>
+{% endblock %}

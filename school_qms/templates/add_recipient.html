@@ -1,8 +1,5 @@
-<html>
-    <head>
-        <title>Documents Manager</title>
-    </head>
-    <body>
+{% extends "base.html" %}
+{% block content %}
         <h1>Recipients</h1>
         <ul>
         {% for recipient in Recipients %}
@@ -15,5 +12,4 @@
                  <input type="submit" id="add_recipient" value="OK">
                 {% csrf_token %}
              <form>
-    </body>
-</html>
+{% endblock %}

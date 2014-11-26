@@ -1,10 +1,5 @@
-<html>
-    <head>
-        <title>School QMS</title>
-    </head>
-    <body>
-    <a href="{% url 'qms' %}">Home</a>
-    <a href="{% url 'processes' %}">Processes</a>
-    <a href="{% url 'procedures' %}">Procedures</a>
-    </body>
-</html>
+{% extends "base.html" %}
+{% block content %}
+<h1>Welcome to the School Quality Management System<h1>
+<p>Choose an item from the menu above</p>
+{% endblock %}

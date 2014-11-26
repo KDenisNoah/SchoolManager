@@ -32,9 +32,9 @@ class Document(models.Model):
     aprobation_date = models.DateField(default=datetime.now)
     #format = models.ForeignKey()?choices?  # digital, paper, both
     #location = models.ManyToMany('locations') # intranet, ...
-    onwer = models.ForeignKey('Agent', default=1)
-    #when_distribute = models.manytomany('dates')
-    recipients = models.ManyToManyField('Recipient', default='')
+    onwer = models.ForeignKey('Agent', related_name="agents", default=1)
+    when_distribute = models.ManyToManyField('Times', default='')
+    recipients = models.ManyToManyField('Agent', related_name="recipients", default='')
     #document = url or file?
     document_file = models.FileField(upload_to='documents',
          null=True, blank=True)
@@ -69,3 +69,37 @@ class Recipient(models.Model):
 
     def __str__(self):
         return self.name
+
+
+class Times(models.Model):
+    MONTHS = (
+    ('00', 'When Needed'),
+    ('01', 'January'),
+    ('02', 'February'),
+    ('03', 'March'),
+    ('04', 'April'),
+    ('05', 'May'),
+    ('06', 'June'),
+    ('07', 'July'),
+    ('08', 'August'),
+    ('09', 'September'),
+    ('10', 'October'),
+    ('11', 'November'),
+    ('12', 'Dececember'),
+    )
+    WEEKS = (
+        ('0', 'Wheen Needed'),
+        ('1', 'First'),
+        ('2', 'Second'),
+        ('3', 'Third'),
+        ('4', 'Fourth'),
+        )
+    month = models.CharField(max_length=2,
+                             choices=MONTHS,
+                             default='0')
+    week = models.CharField(max_length=1,
+                             choices=WEEKS,
+                             default='0')
+
+    def __str__(self):
+        return self.month + '( Week:' + self.week + ')'

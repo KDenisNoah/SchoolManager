@@ -1,24 +1,33 @@
-<html>
-    <head>
-        <title>Documents Manager</title>
-    </head>
-    <body>
+{% extends "base.html" %}
+{% block content %}
         <h1>Document: {{ document.code}}</h1>
         {{ document.name }}
-        <p>Procedure: <a href="../procedure/{{ document.procedure.id }}">{{ document.procedure }}</a></p>
+        <p>Procedure: <a href="{% url 'procedure' document.procedure.pk %}">{{ document.procedure }}</a></p>
         <p>{{ document.description }}</p>
         <p>Owner: {{ document.onwer }}</p>
         <p>Creation date: {{ document.creation_date }} - Aprobation date: {{ document.aprobation_date }}</p>
         {% if document.record %}
         <p><b>It's a record</b></p>
         {% endif %}
+        {% if document.recipients.all %}
+        <h2>Recipients</h2>
+        <ul>
         {% for recipient in document.recipients.all %}
-        <p>{{ recipient }}</p>
+        <li>{{ recipient }}</li>
         {% endfor %}
+        </ul>
+        {% endif %}
+        {% if document.when_distribute.all %}
+        <h2>When should be distributed</h2>
+        {% for time in document.when_distribute.all %}
+        <p>{{ time }}</p>
+        {% endfor %}
+        {% endif %}
         <p><a href="{{ document.document_url}}">url</a></p>
         {% if document.document_file %}
         <p><a href="{{ document.document_file.url}}">file</a></p>
         {% endif %}
+        <h2> <a href="./edit">Edit</a></h2>
         <h1>Revisions</h1>
         {% if revision %}
         {% for rev in revision %}
@@ -26,5 +35,4 @@
         {% endfor %}
         {% endif %}
         <a href="../../revisions/{{ document.pk }}/">Add revision</a>
-    </body>
-</html>
+{% endblock %}

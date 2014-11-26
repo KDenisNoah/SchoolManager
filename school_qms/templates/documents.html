@@ -1,8 +1,5 @@
-<html>
-    <head>
-        <title>Documents Manager</title>
-    </head>
-    <body>
+{% extends "base.html" %}
+{% block content %}
         <h1>Add document</h1>
              <form method="POST" enctype="multipart/form-data">
                  {{ form.as_p}}
@@ -12,8 +9,7 @@
         <h1>Document List</h1>
         <table id="id_list_table">
                  {% for document in documents %}
-                    <tr><td>{{ document.procedure }}</td><td><a href="../document/{{ document.id }}/">{{ document.name }}</a></td><td> {{ document.aprobation_date }}</td></tr>
+                    <tr><td>{{ document.procedure }}</td><td><a href="{% url 'document' document.id %}">{{ document.name }}</a></td><td> {{ document.aprobation_date }}</td></tr>
                 {% endfor %}
         </table>
-    </body>
-</html>
+{% endblock %}

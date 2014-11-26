@@ -1,7 +1,7 @@
 from django.http import HttpResponse
 from django.shortcuts import redirect, render
-from school_qms.models import Process, Procedure, Document, Agent, Revision, Recipient
-from school_qms.forms import DocumentForm, AgentForm, RevisionForm, RecipientForm
+from school_qms.models import Process, Procedure, Document, Agent, Revision, Recipient, Times
+from school_qms.forms import DocumentForm, AgentForm, RevisionForm, RecipientForm, TimeForm, ProcedureForm
 
 
 def qms_page(request):
@@ -17,25 +17,37 @@ def processes_page(request):
     return render(request, 'processes.html', {'processes': processes})
 
 
-def procedures_page(request):
+def procedures_page(request, proc_id=None):
     if request.method == 'POST':
-        Procedure.objects.create(name=request.POST['procedure_name'])
-        return redirect(procedures_page)
+        f = ProcedureForm(request.POST)
+        if f.is_valid():
+            proc = f.save()
+            return redirect('procedure', proc.pk)
+    elif proc_id:
+        procedure = Procedure.objects.get(pk=proc_id)
+        f = ProcedureForm(instance=procedure)
+    else:
+        f = ProcedureForm()
 
     procedures = Procedure.objects.all()
-    return render(request, 'procedures.html', {'procedures': procedures})
+    return render(request, 'procedures.html',
+         {'procedures': procedures, 'form': f})
 
 
 def documents_page(request, doc_id=None):
     if doc_id:
-        data = {'pk': doc_id}
-        f = DocumentForm(initial=data)
-    elif request.method == 'POST':
+        print ((doc_id))
+    if request.method == 'POST':
         f = DocumentForm(request.POST, request.FILES)
         if f.is_valid():
             doc = f.save()
             rev = Revision(document=doc, number=0, reason='initial creation')
             rev.save()
+            return redirect('document', doc.pk)
+    elif doc_id:
+        document = Document.objects.get(pk=doc_id)
+        f = DocumentForm(instance=document)
+        return redirect('document', document.pk)
     else:
         f = DocumentForm()
 
@@ -48,6 +60,12 @@ def document_page(request, doc_id):
     doc = Document.objects.get(pk=doc_id)
     rev = Revision.objects.filter(document=doc.pk)
     return render(request, 'document.html', {'document': doc, 'revision': rev})
+
+
+def procedure_page(request, proc_id):
+    proc = Procedure.objects.get(pk=proc_id)
+    docs = Document.objects.filter(procedure=proc)
+    return render(request, 'procedure.html', {'procedure': proc, 'documents': docs})
 
 
 def add_agent(request):
@@ -94,3 +112,16 @@ def add_revision(request, doc_id=None):
             f = RevisionForm()
 
     return render(request, 'add_revision.html', {'form': f})
+
+
+def add_time(request):
+    if request.method == 'POST':
+        f = TimeForm(request.POST)
+        if f.is_valid():
+            f.save()
+    else:
+        f = TimeForm()
+
+    times = Times.objects.all()
+    return render(request, 'add_times.html',
+         {'Times': times, 'form': f})
