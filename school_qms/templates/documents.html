@@ -1,15 +1,42 @@
 {% extends "base.html" %}
 {% block content %}
         <h1>Add document</h1>
-             <form method="POST" enctype="multipart/form-data">
+             <form method="POST" enctype="multipart/form-data" class="form-horizontal" role="form">
+                <div class="form-group">
+                     <label for="{{form.code.id_for_label}}">Code:</label>
+                     {{form.code}}
+                </div>
+                <div class="form-group">
+                     <label for="{{form.name.id_for_label}}">Name:</label>
+                     {{form.name}}
+                </div>
+                <div class="form-group">
+                     <label for="{{form.procedure.id_for_label}}">Procedure:</label>
+                     {{form.procedure}}
+                </div>
+                <div class="form-group">
+                        <div class="col-sm-12">
+                     <label for="{{form.description.id_for_label}}">Description:</label>
+                     {{form.description}}
+                     </div>
+                </div>
                  {{ form.as_p}}
                  <input type="submit" id="add_document" value="OK">
                 {% csrf_token %}
              </form>
         <h1>Document List</h1>
-        <table id="id_list_table">
-                 {% for document in documents %}
-                    <tr><td>{{ document.procedure }}</td><td><a href="{% url 'document' document.id %}">{{ document.name }}</a></td><td> {{ document.aprobation_date }}</td></tr>
-                {% endfor %}
+        <table id="id_list_table" class="table">
+            <tr>
+                <th>Procedure</th>
+                <th>Document</th>
+                <th>Aprovation date</th>
+            </tr>
+             {% for document in documents %}
+                <tr>
+                    <td>{{ document.procedure }}</td>
+                    <td><a href="{% url 'document' document.id %}">{{ document.name }}</a></td>
+                    <td> {{ document.aprobation_date }}</td>
+                </tr>
+            {% endfor %}
         </table>
 {% endblock %}

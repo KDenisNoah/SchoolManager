@@ -20,4 +20,7 @@ urlpatterns = patterns('',
          name='revision'),
     url(r'^revisions/', 'school_qms.views.add_revision', name='revisions'),
     url(r'^times/', 'school_qms.views.add_time', name='times'),
+    url(r'^activity/(?P<proc_id>[0-9]+)/$', 'school_qms.views.activity_page',
+         name='activity'),
+    url(r'^activity/', 'school_qms.views.activity_page', name='activity'),
 )

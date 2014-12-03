@@ -1,6 +1,6 @@
 from django.forms import ModelForm, TextInput, CheckboxSelectMultiple
 from django import forms
-from school_qms.models import Document, Agent, Recipient, Revision, Times, Procedure
+from school_qms.models import *
 
 
 class DocumentForm(ModelForm):
@@ -9,12 +9,11 @@ class DocumentForm(ModelForm):
         model = Document
         fields = ['name', 'code', 'description', 'procedure', 'code', 'record',
             'enabled', 'disabled_date', 'creation_date', 'aprobation_date',
-            'document_file', 'document_url', 'onwer', 'recipients',
+            'document_file', 'document_url', 'owner', 'recipients',
              'when_distribute']
         widgets = {
             'name': forms.TextInput,
             'code': TextInput,
-            'recipients': CheckboxSelectMultiple,
         }
 
 
@@ -56,7 +55,28 @@ class ProcedureForm(ModelForm):
 
     class Meta:
         model = Procedure
-        fields = ['name', 'description', 'onwer']
+        fields = ['name', 'description', 'owner']
         widgets = {
             'name': forms.TextInput,
         }
+
+
+class ActivityForm(ModelForm):
+
+    class Meta:
+        model = Activity
+        fields = ['procedure', 'order', 'activity', 'owner',
+            'documents', 'when_distribute']
+
+
+class ActivityForm2(forms.Form):
+    PROCEDURES = Procedure.objects.all()
+    procedure = forms.ChoiceField(widget=forms.Select, choices=PROCEDURES)
+    order = forms.IntegerField(min_value=1)
+    activity = forms.CharField(widget=forms.Textarea)
+    OWNERS = Agent.objects.all()
+    owner = forms.ChoiceField(widget=forms.Select, choices=OWNERS)
+    DOCUMENTS = Document.objects.all()
+    document = forms.ChoiceField(widget=forms.Select, choices=DOCUMENTS)
+    WHEN = Times.objects.all()
+    when_distribute = forms.ChoiceField(widget=forms.Select, choices=WHEN)

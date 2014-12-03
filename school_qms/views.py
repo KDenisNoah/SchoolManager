@@ -1,7 +1,7 @@
 from django.http import HttpResponse
 from django.shortcuts import redirect, render
-from school_qms.models import Process, Procedure, Document, Agent, Revision, Recipient, Times
-from school_qms.forms import DocumentForm, AgentForm, RevisionForm, RecipientForm, TimeForm, ProcedureForm
+from school_qms.models import *
+from school_qms.forms import *
 
 
 def qms_page(request):
@@ -47,7 +47,6 @@ def documents_page(request, doc_id=None):
     elif doc_id:
         document = Document.objects.get(pk=doc_id)
         f = DocumentForm(instance=document)
-        return redirect('document', document.pk)
     else:
         f = DocumentForm()
 
@@ -65,7 +64,8 @@ def document_page(request, doc_id):
 def procedure_page(request, proc_id):
     proc = Procedure.objects.get(pk=proc_id)
     docs = Document.objects.filter(procedure=proc)
-    return render(request, 'procedure.html', {'procedure': proc, 'documents': docs})
+    return render(request, 'procedure.html', {'procedure': proc,
+         'documents': docs})
 
 
 def add_agent(request):
@@ -121,7 +121,26 @@ def add_time(request):
             f.save()
     else:
         f = TimeForm()
+        print((f))
 
     times = Times.objects.all()
     return render(request, 'add_times.html',
          {'Times': times, 'form': f})
+
+
+def activity_page(request, proc_id=None):
+    if request.method == 'POST':
+        f = ActivityForm(request.POST)
+        if f.is_valid():
+            f.save()
+    else:
+        if proc_id:
+            initial = {'procedure': proc_id}
+            f = ActivityForm(initial)
+        else:
+            f = ActivityForm()
+
+    activities = Activity.objects.filter(procedure=proc_id)
+
+    return render(request, 'activity.html', {
+         'activities': activities, 'form': f})

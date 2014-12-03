@@ -13,7 +13,7 @@ class Process(models.Model):
 class Procedure(models.Model):
     name = models.TextField(default='')
     description = models.TextField(default='')
-    onwer = models.ForeignKey('Agent', default=1)
+    owner = models.ForeignKey('Agent', default=1)
 
     def __str__(self):
         return self.name
@@ -32,9 +32,10 @@ class Document(models.Model):
     aprobation_date = models.DateField(default=datetime.now)
     #format = models.ForeignKey()?choices?  # digital, paper, both
     #location = models.ManyToMany('locations') # intranet, ...
-    onwer = models.ForeignKey('Agent', related_name="agents", default=1)
+    owner = models.ForeignKey('Agent', related_name="agents", default=1)
     when_distribute = models.ManyToManyField('Times', default='')
-    recipients = models.ManyToManyField('Agent', related_name="recipients", default='')
+    recipients = models.ManyToManyField('Agent',
+         related_name="recipients", default='')
     #document = url or file?
     document_file = models.FileField(upload_to='documents',
          null=True, blank=True)
@@ -103,3 +104,19 @@ class Times(models.Model):
 
     def __str__(self):
         return self.month + '( Week:' + self.week + ')'
+
+
+class Activity(models.Model):
+
+    procedure = models.ForeignKey('Procedure')
+    order = models.IntegerField()
+    activity = models.TextField(default='')
+    owner = models.ForeignKey('Agent', default='')
+    documents = models.ManyToManyField('Document')
+    when_distribute = models.ManyToManyField('Times', default='')
+
+    class Meta:
+        unique_together = ('procedure', 'order',)
+
+    def __str__(self):
+        return self.procedure + '.' + self.order

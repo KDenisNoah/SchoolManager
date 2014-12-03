@@ -6,7 +6,7 @@
            <input type="submit" id="add_procedure" value="OK">
                 {% csrf_token %}
         </form>
-        <table id="id_list_table">
+        <table id="id_list_table" class="table">
                  {% for procedure in procedures %}
                     <tr><td><a href="{% url 'procedure' procedure.pk %}">{{ procedure.name }}</a></td></tr>
                 {% endfor %}
