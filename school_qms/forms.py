@@ -1,4 +1,4 @@
-from django.forms import ModelForm, TextInput, CheckboxSelectMultiple
+from django.forms import *  # ModelForm, TextInput, CheckboxSelectMultiple
 from django import forms
 from school_qms.models import *
 
@@ -7,13 +7,25 @@ class DocumentForm(ModelForm):
 
     class Meta:
         model = Document
-        fields = ['name', 'code', 'description', 'procedure', 'code', 'record',
+        fields = ['procedure', 'code', 'name', 'description', 'record',
             'enabled', 'disabled_date', 'creation_date', 'aprobation_date',
             'document_file', 'document_url', 'owner', 'recipients',
              'when_distribute']
         widgets = {
-            'name': forms.TextInput,
-            'code': TextInput,
+            'procedure': Select(attrs={'class': 'form-control'}),
+            'code': TextInput(attrs={'class': 'form-control'}),
+            'name': forms.TextInput(attrs={'class': 'form-control'}),
+            'enabled': CheckboxInput(attrs={'class': 'form-control'}),
+            'disabled_date': DateInput(attrs={'class': 'form-control'}),
+            'description': Textarea(attrs={'class': 'form-control',
+                 'rows': '4'}),
+            'creation_date': DateInput(attrs={'class': 'form-control'}),
+            'aprobation_date': DateInput(attrs={'class': 'form-control'}),
+            'document_url': URLInput(attrs={'class': 'form-control'}),
+            'document_file': FileInput(attrs={'class': 'form-control'}),
+            'owner': Select(attrs={'class': 'form-control'}),
+            'recipients': SelectMultiple(attrs={'class': 'form-control'}),
+            'when_distribute': SelectMultiple(attrs={'class': 'form-control'}),
         }
 
 
@@ -55,9 +67,13 @@ class ProcedureForm(ModelForm):
 
     class Meta:
         model = Procedure
-        fields = ['name', 'description', 'owner']
+        fields = ['name', 'owner', 'process', 'description']
         widgets = {
-            'name': forms.TextInput,
+            'name': forms.TextInput(attrs={'class': 'form-control'}),
+            'process': SelectMultiple(attrs={'class': 'form-control'}),
+            'owner': Select(attrs={'class': 'form-control'}),
+            'description': Textarea(attrs={'class': 'form-control',
+                 'rows': '4'}),
         }
 
 

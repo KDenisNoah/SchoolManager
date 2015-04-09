@@ -34,7 +34,7 @@ def procedures_page(request, proc_id=None):
          {'procedures': procedures, 'form': f})
 
 
-def documents_page(request, doc_id=None):
+def add_document(request, doc_id=None):
     if doc_id:
         print ((doc_id))
     if request.method == 'POST':
@@ -50,9 +50,25 @@ def documents_page(request, doc_id=None):
     else:
         f = DocumentForm()
 
+    return render(request, 'add_document.html',
+         {'form': f})
+
+
+def documents_page(request, doc_id=None):
     documents = Document.objects.all()
+    if request.method == 'POST':
+        if request.POST.getlist('owners'):
+            print((request.POST.getlist('owners')))
+            documents = documents.filter(owner__in=request.POST.getlist('owners'))
+        if request.POST.getlist('times'):
+            documents = documents.filter(when_distribute__in=request.POST.getlist('times'))
+        if request.POST.getlist('recipients'):
+            documents = documents.filter(recipients__in=request.POST.getlist('recipients'))
+
+    owners = Agent.objects.all()
+    times = Times.objects.all() #  documents.values("when_distribute").distinct()
     return render(request, 'documents.html',
-         {'documents': documents, 'form': f})
+         {'documents': documents, 'owners': owners, 'times': times})
 
 
 def document_page(request, doc_id):

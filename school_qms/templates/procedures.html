@@ -1,11 +1,52 @@
 {% extends "base.html" %}
 {% block content %}
-        <h1>Procedures</h1>
+ <form id='form_doc' role="form" class="form-horizontal" method="POST" enctype="multipart/form-data">
+                <legend>Add procedure</legend>
+                <div class="row">
+                  <div class="col-md-4">
+                      <div class="form-group">
+                         <label  class="col-md-1 control-label" for="{{form.name.id_for_label}}">Name:</label>
+                        {{form.name}}
+                      </div>
+                  </div>
+                  <div class="col-md-4">
+                      <div class="form-group">
+                         <label class="col-md-1 control-label" for="{{form.owner.id_for_label}}">Owner:</label>
+                         {{form.owner}}
+                      </div>
+                  </div>
+                  <div class="col-md-4">
+                      <div class="form-group">
+                         <label class="col-md-1 control-label" for="{{form.process.id_for_label}}">Process:</label>
+                         {{form.process}}
+                      </div>
+                  </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                      <div class="form-group">
+                         <label class="col-md-1 control-label" for="{{form.description.id_for_label}}">Description:</label>
+                         {{form.description}}
+                     </div>
+                </div>
+                </div>
+                                <div class="row">
+                <br />
+                 <input type="submit" class="btn btn-primary" id="add_procedure" value="Add Procedure">
+              </div>
+                {% csrf_token %}
+                </form>
+
+
+<!--
+
         <form method="POST">
            {{ form.as_p }}
            <input type="submit" id="add_procedure" value="OK">
                 {% csrf_token %}
         </form>
+-->
+        <h1>Procedures</h1>
         <table id="id_list_table" class="table">
                  {% for procedure in procedures %}
                     <tr><td><a href="{% url 'procedure' procedure.pk %}">{{ procedure.name }}</a></td></tr>

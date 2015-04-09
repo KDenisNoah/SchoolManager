@@ -14,6 +14,7 @@ class Procedure(models.Model):
     name = models.TextField(default='')
     description = models.TextField(default='')
     owner = models.ForeignKey('Agent', default=1)
+    process = models.ManyToManyField('Process', default='')
 
     def __str__(self):
         return self.name
@@ -103,7 +104,7 @@ class Times(models.Model):
                              default='0')
 
     def __str__(self):
-        return self.month + '( Week:' + self.week + ')'
+        return  self.get_month_display() + ' (' + self.get_week_display() + ' week)'
 
 
 class Activity(models.Model):
