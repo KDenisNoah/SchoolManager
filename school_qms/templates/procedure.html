@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% block content %}
+        <h1>Procedure: {{ procedure.name }}</h1>
+        <p>{{ procedure.description }}</p>
+        <p>Owner: {{ procedure.owner }}</p>
+
+        {% if documents %}
+        <h2>Related documents</h2>
+        <ul>
+        {% for document in documents %}
+        <li><a href="{% url 'document' document.pk %}">{{ document }}</a></li>
+        {% endfor %}
+        </ul>
+        {% endif %}
+        <h2> <a href="{% url 'procedure_edit' procedure.pk %}">Edit</a></h2>
+{% endblock %}

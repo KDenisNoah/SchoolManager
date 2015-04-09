@@ -1,0 +1,101 @@
+{% extends "base.html" %}
+{% block content %}
+             <form id='form_doc' role="form" class="form-horizontal" method="POST" enctype="multipart/form-data">
+                <legend>Add document</legend>
+                <div class="row">
+                  <div class="col-md-3">
+                      <div class="form-group">
+                         <label  class="col-md-1 control-label" for="{{form.code.id_for_label}}">Code:</label>
+                        {{form.code}}
+                      </div>
+                  </div>
+                  <div class="col-md-3">
+                      <div class="form-group">
+                         <label class="col-md-1 control-label" for="{{form.name.id_for_label}}">Name:</label>
+                         {{form.name}}
+                      </div>
+                  </div>
+                  <div class="col-md-3">
+                      <div class="form-group">
+                         <label class="col-md-1 control-label" for="{{form.procedure.id_for_label}}">Procedure:</label>
+                         {{form.procedure}}
+                      </div>
+                  </div>
+                  <div class="col-md-3">
+                      <div class="form-group">
+                         <label class=control-label" for="{{form.record.id_for_label}}">Is a record:</label>
+                        {{form.record}}
+                     </div>
+                  </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                      <div class="form-group">
+                         <label class="col-md-1 control-label" for="{{form.description.id_for_label}}">Description:</label>
+                         {{form.description}}
+                     </div>
+                </div>
+                </div>
+               <div class="row">
+                  <div class="col-md-3">
+                      <div class="form-group">
+                     <label class="control-label" for="{{form.creation_date.id_for_label}}">Creation Date:</label>
+                     {{form.creation_date}}
+                      </div>
+                  </div>
+                  <div class="col-md-3">
+                      <div class="form-group">
+                     <label class="control-label" for="{{form.aprobation_date.id_for_label}}">Aprobation Date:</label>
+                     {{form.aprobation_date}}
+                      </div>
+                  </div>
+                  <div class="col-md-3">
+                      <div class="form-group">
+                     <label class="control-label" for="{{form.enabled.id_for_label}}">Enabled?:</label>
+                     {{form.enabled}}
+                      </div>
+                  </div>
+                  <div class="col-md-3">
+                      <div class="form-group">
+                     <label class="control-label" for="{{form.disabled_date.id_for_label}}">Disabled Date:</label>
+                     {{form.disabled_date}}
+                      </div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-3">
+                  <div class="form-group">
+                     <label class="control-label" for="{{form.owner.id_for_label}}">Owner:</label>
+                     {{form.owner}}
+                     </div>
+                </div>
+                  <div class="col-md-3">
+                  <div class="form-group">
+                     <label class="control-label" for="{{form.when_distribute.id_for_label}}">Distribute Date:</label>
+                     {{form.when_distribute}}
+                     </div>
+                </div>
+                  <div class="col-md-3">
+                  <div class="form-group">
+                     <label class="control-label" for="{{form.recipients.id_for_label}}">Recipients:</label>
+                     {{form.recipients}}
+                     </div>
+                </div>
+                </div>
+                  <div class="row">
+                  <div class="col-md-6">
+                     <label class="control-label" for="{{form.document_file.id_for_label}}">Document File:</label>
+                     {{form.document_file}}
+                </div>
+                  <div class="col-md-6">
+                     <label class="control-label" for="{{form.document_url.id_for_label}}">Document URL:</label>
+                     {{form.document_url}}
+                </div>
+                </div>
+                <div class="row">
+                <br />
+                 <input type="submit" class="btn btn-primary" id="add_document" value="Add Document">
+              </div>
+                {% csrf_token %}
+             </form>
+{% endblock %}

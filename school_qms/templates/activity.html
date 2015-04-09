@@ -1,0 +1,56 @@
+{% extends "base.html" %}
+{% block content %}
+        <h1>Activity</h1>
+        <form method="POST">
+        <h2>Procedure: {{ form.procedure }}</h2>
+
+<!--
+  <form method="POST">
+                 {{ form.as_p}}
+                 <input type="submit" id="add_activity" value="OK">
+                {% csrf_token %}
+             <form>
+-->
+        <table name='activities' id='activities' class="table">
+        <tr>
+            <th>Order</th>
+            <th>Activity</th>
+            <th>Owner</th>
+            <th>Documents (Filter by selected process?)</th>
+            <th>When</th>
+            <th>Actions</th>
+        </tr>
+        <div id="act_table">
+        {%if activities %}
+            {% for activity in activities %}
+            <tr>
+            <td>{{ activity.order }}</td>
+            <td>{{ activity.activity }}</td>
+            <td>{{ activity.owner }}</td>
+
+            <td>{% for doc in activity.documents.all %}
+                <p>{{ doc }}</p>
+            {% endfor %}
+            </td>
+              <td>{% for when in activity.when_distribute.all %}
+                <p>{{ when }}</p>
+            {% endfor %}
+            </td>
+
+
+            <td><p>^</p><p>v</p></td>
+        <tr>
+        {% endfor %}
+        {% endif %}
+        </div>
+<td>{{ form.order }}</td>
+<td>{{ form.activity }}</td>
+<td>{{ form.owner }}</td>
+<td>{{ form.documents }}</td>
+<td>{{ form.when_distribute }}</td>
+<td><input type="submit" id="add_activity" value="Add"></td>
+                {% csrf_token %}
+</form>
+        </tr>
+        </table>
+{% endblock %}

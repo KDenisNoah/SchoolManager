@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% block content %}
+        <h1>Times</h1>
+        <ul>
+        {% for time in Times %}
+            <li>{{ time }}</li>
+        {% endfor %}
+        </ul>
+        <h1>Add time</h1>
+             <form method="POST">
+                 {{ form.as_p}}
+                 <input type="submit" id="add_time" value="OK">
+                {% csrf_token %}
+             <form>
+{% endblock %}
