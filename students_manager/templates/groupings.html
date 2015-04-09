@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% block content %}
+        <h1>Groupings</h1>
+        <form method="POST">
+                 {{ form.as_p}}
+        <input type="submit" id="new_grouping" value="OK">
+                {% csrf_token %}
+        </form>
+        <table id="id_list_table">
+                 {% for course,cgrouping in groupings.items %}
+                    <tr><th>{{ course }} </th><td><a href="{% url 'course' course.id %}">View</a></td></tr>
+                     {%for grouping in cgrouping %}
+                     <tr><td>{{ grouping }}</td><td><a href="{% url 'grouping' grouping.id %}">View</a></td></tr>
+                     {% endfor %}
+                {% endfor %}
+        </table>
+{% endblock %}

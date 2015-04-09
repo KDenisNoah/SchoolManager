@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Students Manager</title>
+    </head>
+    <body>
+    <a href="{% url 'student_manager' %}">Home</a>
+    <a href="{% url 'students' %}">Students</a>
+    <a href="{% url 'courses' %}">Courses</a>
+    <a href="{% url 'groups' %}">Groups</a>
+    <a href="{% url 'groupings' %}">Groupings</a>
+    {% block content %}{% endblock %}
+    </body>
+</html>
