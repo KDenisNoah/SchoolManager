@@ -1,20 +1,14 @@
-<html>
-    <head>
-        <title>Students Manager</title>
-    </head>
-    <body>
-    <a href="{% url 'student_manager' %}">Home</a>
-    <a href="{% url 'students' %}">Students</a>
-    <a href="{% url 'groups' %}">Groups</a>
+{% extends "base.html" %}
+{% block content %}
         <h1>Groups</h1>
         <form method="POST">
-            <input name="group_name" id="id_new_group" placeholder="Enter a group" />
+                 {{ form.as_p}}
+        <input type="submit" id="new_group" value="OK">
                 {% csrf_token %}
         </form>
         <table id="id_list_table">
                  {% for group in groups %}
-                    <tr><td>{{ group.name }}</td></tr>
+                    <tr><td>{{ group.name }}</td><td><a href="{% url 'group' group.id %}">View</a></td></tr>
                 {% endfor %}
         </table>
-    </body>
-</html>
+{% endblock %}

@@ -1,10 +1,4 @@
-<html>
-    <head>
-        <title>Students Manager</title>
-    </head>
-    <body>
-    <a href="{% url 'student_manager' %}">Home</a>
-    <a href="{% url 'students' %}">Students</a>
-    <a href="{% url 'groups' %}">Groups</a>
-    </body>
-</html>
+{% extends "base.html" %}
+{% block content %}
+<h1>Welcome to the Students Manager Applications</h1>
+{% endblock %}

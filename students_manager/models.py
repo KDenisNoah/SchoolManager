@@ -1,5 +1,34 @@
 from django.db import models
 
+class Course(models.Model):    
+   name = models.TextField(max_length=10, default='')
+   year = models.IntegerField(default=1)
+   
+   def __str__(self):
+        return self.name
+
+class Group(models.Model):
+    name = models.TextField(max_length=10, default='')
+    course = models.ForeignKey(Course)
+    #modalidad = modlingustico, turno...
+    
+    def __str__(self):
+        return self.name
+     
+    def save(self, *args, **kwargs):  # http://stackoverflow.com/a/16574947
+        super(Group, self).save(*args, **kwargs)
+        #first check if the grouping exists!!
+        g = Grouping(name=self.name,course=self.course)
+        g.save()
+    
+
+class Grouping(models.Model):
+    name = models.TextField(max_length=10, default='')
+    course = models.ForeignKey(Course)
+    
+    def __str__(self):
+        return self.name
+
 
 def content_file_name(instance, filename):
     print('/students/' + str(instance.id) + '.' + filename.split('.')[1])
@@ -12,6 +41,11 @@ class Student(models.Model):
     last_name_2 = models.TextField(max_length=50, default='')
     #picture = models.ImageField(upload_to=content_file_name, default=None, blank=True, null=True)
     picture = models.ImageField(upload_to='students/', default=None, blank=True, null=True)
+    group = models.ForeignKey(Group)
+    groupings = models.ManyToManyField(Grouping, null=True)
+
+    def __str__(self):
+        return self.name +" "+ self.last_name_1 +" "+ self.last_name_2
 
     def save(self, *args, **kwargs):  # http://stackoverflow.com/a/16574947
         # Call save first, to create a primary key
@@ -42,5 +76,3 @@ class Student(models.Model):
         if self.picture and hasattr(self.picture, 'url'):
             return self.picture.url
 
-class Group(models.Model):
-    name = models.TextField(max_length=10, default='')

@@ -1,26 +1,19 @@
-<html>
-    <head>
-        <title>Students Manager</title>
-    </head>
-    <body>
-    <a href="{% url 'student_manager' %}">Home</a>
-    <a href="{% url 'students' %}">Students</a>
-    <a href="{% url 'groups' %}">Groups</a>
+{% extends "base.html" %}
+{% block content %}
         <h1>Add student</h1>
              <form method="POST" enctype="multipart/form-data">
                  {{ form.as_p}}
-                 <input type="submit" id="add_student" value="OK">
+                 <input type="submit" name="add_student" value="OK">
                 {% csrf_token %}
              <form>
         <h1>Student List</h1>
         <form method="POST">
         <table id="id_list_table">
                  {% for student in students %}
-                    <tr><td><input type="checkbox" name="student"  value="{{ student.id }}"></td><td><img src="{{ student.picture_url|default_if_none:'#' }}" height="42" width="42"></td><td> {{ student.last_name_1 }} {{student.last_name_2}}, {{student.name }}</td></tr>
+                    <tr><td><input type="checkbox" name="student"  value="{{ student.id }}"></td><td><img src="{{ student.picture_url|default_if_none:'#' }}" height="42" width="42"></td><td> {{ student.last_name_1 }} {{student.last_name_2}}, {{student.name }}</td><td>{{ student.group }}</td></tr>
                 {% endfor %}
         </table>
              <input type="submit" id="students_group" value="OK">
             {% csrf_token %}
         <form>
-    </body>
-</html>
+{% endblock %}
