@@ -7,7 +7,6 @@ from custom_forms.forms import CFormForm, QuestionForm, ResponsesForm
 def forms_page(request):
     if request.method == 'POST':
             f = CFormForm(request.POST)
-            print(f)
             if f.is_valid():
                 f.save()
     else:
@@ -23,3 +22,14 @@ def form_page(request,form_id=None):
     form = CForm.objects.filter(pk=form_id)[0]
     questions = Question.objects.filter(form=form)
     return render(request, 'form.html', {'form': form, 'questions': questions})
+ 
+def questions_page(request):
+    if request.method == 'POST':
+            f = QuestionForm(request.POST)
+            if f.is_valid():
+                f.save()
+    else:
+        f = QuestionForm()
+
+    questions = Question.objects.all()
+    return render(request, 'questions.html', {'questions': questions, 'form': f})
