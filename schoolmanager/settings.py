@@ -40,6 +40,7 @@ INSTALLED_APPS = (
     'django.contrib.staticfiles',
     'students_manager',
     'school_qms',
+    'custom_forms',
 )
 
 MIDDLEWARE_CLASSES = (

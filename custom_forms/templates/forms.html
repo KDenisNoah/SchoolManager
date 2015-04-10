@@ -1,0 +1,15 @@
+{% extends "base_cf.html" %}
+{% block content %}
+        <h1>Forms</h1>
+        <form method="POST">
+            {{ form.as_p }}
+                {% csrf_token %}
+            <input type="submit" id="new_form" value="OK">
+        </form>
+        <table id="id_list_table">
+                  <tr><th>Course</th><th>Year</th></tr>
+                 {% for form in forms %}
+                    <tr><td>{{ form.name }}</td><td><a href="{% url 'form' form.id %}">View</a></td></tr>
+                {% endfor %}
+        </table>
+{% endblock %}

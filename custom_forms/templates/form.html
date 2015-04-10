@@ -1,0 +1,14 @@
+{% extends "base_cf.html" %}
+{% block content %}
+        <h1>Form: {{ form.name }}</h1>
+        {% if questions %}
+        <table id="id_list_table">
+                  <tr><th>Name</th><th>Type</th></tr>
+                 {% for question in questions %}
+                    <tr><td>{{ question.question }}</td><td>{{ question.qtype }}</td></tr>
+                {% endfor %}
+        </table>
+        {% else %}
+        <p>No questions in this form</p>
+        {% endif %}
+{% endblock %}
