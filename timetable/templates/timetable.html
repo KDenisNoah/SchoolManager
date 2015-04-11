@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% block content %}
+        <h1>Timetable</h1>
+        <form method="POST">
+                 {{ form.as_p}}
+        <input type="submit" id="new_timetable" value="OK">
+                {% csrf_token %}
+        </form>
+        <table id="id_list_table">
+                 {% for time in timetable %}
+                    <tr><th>Day</th><th>Hour</th><th>Grouping</th><th>Subject</th></tr>
+                     <tr><td>{{ time.day }}</td><td>{{ time.hour }}</td><td>{{ time.grouping }}</td><td>{{ time.subject }}</td></tr>
+                {% endfor %}
+        </table>
+{% endblock %}

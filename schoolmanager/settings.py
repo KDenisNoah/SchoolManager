@@ -41,6 +41,7 @@ INSTALLED_APPS = (
     'students_manager',
     'school_qms',
     'custom_forms',
+    'timetable',
 )
 
 MIDDLEWARE_CLASSES = (
