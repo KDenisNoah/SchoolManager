@@ -10,11 +10,18 @@ def qms_page(request):
 
 def processes_page(request):
     if request.method == 'POST':
-        Process.objects.create(name=request.POST['process_name'])
-        return redirect(processes_page)
+        f = processForm(request.POST)
+        if f.is_valid():
+            f.save()
+    else:
+        f = processForm()
+
+#    if request.method == 'POST':
+#        Process.objects.create(name=request.POST['process_name'])
+#        return redirect(processes_page)
 
     processes = Process.objects.all()
-    return render(request, 'processes.html', {'processes': processes})
+    return render(request, 'processes.html', {'processes': processes,'form':f})
 
 
 def procedures_page(request, proc_id=None):

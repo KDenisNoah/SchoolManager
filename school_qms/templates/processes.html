@@ -1,8 +1,9 @@
-{% extends "base.html" %}
+{% extends "base_qms.html" %}
 {% block content %}
         <h1>Processes</h1>
         <form method="POST">
-            <input name="process_name" id="id_new_process" placeholder="Enter a process" />
+           {{ form.as_p }}
+                            <input type="submit" id="add_process" value="OK">
                 {% csrf_token %}
         </form>
         <table id="id_list_table" class="table">

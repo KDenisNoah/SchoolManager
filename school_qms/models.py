@@ -2,12 +2,53 @@ from django.db import models
 from datetime import datetime
 
 
-class Process(models.Model):
+
+
+class subProcess(models.Model):
     name = models.TextField(default='')
-    description = models.TextField(default='')
+
+class Agent(models.Model):
+    name = models.TextField(default='')
 
     def __str__(self):
         return self.name
+
+
+class Process(models.Model):
+    name = models.TextField(default='')
+    code = models.TextField(default='')
+    rev = models.IntegerField(default=0)
+    owner = models.ForeignKey('Agent', default=1)
+    description = models.TextField(default='')#goal
+    scope = models.TextField(null=True, blank=True)
+    start_activity = models.TextField(default='')
+    providers = models.TextField(null=True, blank=True)
+    end_activity = models.TextField(null=True, blank=True)
+    customers = models.TextField(null=True, blank=True)
+    subprocess = models.ManyToManyField(subProcess)
+    #procedures = maybe from them to here
+    instructions = models.TextField(null=True, blank=True)
+    legislation = models.TextField(null=True, blank=True)
+    date = models.DateField(default=datetime.now)
+
+    def __str__(self):
+        return self.name
+
+
+class detailedProcess(models.Model):
+    inputs = models.TextField(null=True, blank=True)
+    process = models.ForeignKey(Process,related_name="parent_process" )
+    order = models.IntegerField()
+    #subprocess
+    activities = models.TextField()
+    #instructions_doc= models.ManyToManyField(Document)
+    #generated_docs
+    owner = models.ForeignKey('Agent', default=1)
+    output = models.TextField()
+    related_process = models.ForeignKey(Process,related_name="related_process" )
+    
+    def __str__(self):
+        return self.process + "(" + self.order + ")"
 
 
 class Procedure(models.Model):
@@ -45,6 +86,17 @@ class Document(models.Model):
     def __str__(self):
         return self.name
 
+class Dashboard(models.Model):
+    process = models.ForeignKey(Process)
+    code = models.TextField()
+    goal = models.TextField()
+    indicador = models.TextField()
+    method = models.TextField()
+    #goal_value another table and change also the date...
+    frecuency = models.TextField()
+    owner = models.ForeignKey(Agent)
+    form = models.ForeignKey(Document)
+
 
 class Revision(models.Model):
     document = models.ForeignKey('Document')
@@ -57,13 +109,6 @@ class Revision(models.Model):
 
     def __str__(self):
         return self.document.name + " (rev. " + self.number + ")"
-
-
-class Agent(models.Model):
-    name = models.TextField(default='')
-
-    def __str__(self):
-        return self.name
 
 
 class Recipient(models.Model):
