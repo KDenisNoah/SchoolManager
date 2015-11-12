@@ -42,8 +42,6 @@ def procedures_page(request, proc_id=None):
 
 
 def add_document(request, doc_id=None):
-    if doc_id:
-        print ((doc_id))
     if request.method == 'POST':
         f = DocumentForm(request.POST, request.FILES)
         if f.is_valid():

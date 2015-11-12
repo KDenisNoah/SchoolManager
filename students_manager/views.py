@@ -10,16 +10,16 @@ def student_manager_page(request):
 
 def students_page(request):
     if request.method == 'POST':
-        print(request.POST)
+        #print(request.POST)
         if 'add_student' in request.POST:
-            print(request.POST)
+            #print(request.POST)
             f = StudentForm(request.POST, request.FILES)
-            print(f)
+            #print(f)
             if f.is_valid():
                 f.save()
         elif 'student' in request.POST:  # maybe redirect this to another view, maybe groups/selected group with a message with the added students
             for item in request.POST.getlist('student'):
-                print((item))  # add those pk to the (to be done) selected group
+                #print((item))  # add those pk to the (to be done) selected group
                 s = Student.objects.get(id=item)
                 # s.delete()
             f = StudentForm()
@@ -32,11 +32,15 @@ def students_page(request):
     return render(request, 'students.html', {'students': students, 'form': f})
 
 
-def groups_page(request):
+def groups_page(request,group_id=None):
     if request.method == 'POST':
+       #print(request.POST)
        f = GroupForm(request.POST)
        if f.is_valid():
             f.save()
+    elif group_id:
+        group = Group.objects.get(pk=group_id)
+        f = GroupForm(instance=group)
     else:
         f = GroupForm()
         

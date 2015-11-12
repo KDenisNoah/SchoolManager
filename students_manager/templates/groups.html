@@ -1,4 +1,4 @@
-{% extends "base.html" %}
+{% extends "sm_base.html" %}
 {% block content %}
         <h1>Groups</h1>
         <form method="POST">
@@ -8,7 +8,7 @@
         </form>
         <table id="id_list_table">
                  {% for group in groups %}
-                    <tr><td>{{ group.name }}</td><td><a href="{% url 'group' group.id %}">View</a></td></tr>
+                    <tr><td>{{ group.name }}</td><td><a href="{% url 'group' group.id %}">View</a></td><td><a href="{% url 'group_edit' group.id %}">Edit</a></td></tr>
                 {% endfor %}
         </table>
 {% endblock %}

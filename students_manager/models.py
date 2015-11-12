@@ -41,8 +41,8 @@ class Student(models.Model):
     last_name_2 = models.TextField(max_length=50, default='')
     #picture = models.ImageField(upload_to=content_file_name, default=None, blank=True, null=True)
     picture = models.ImageField(upload_to='students/', default=None, blank=True, null=True)
-    group = models.ForeignKey(Group)
-    groupings = models.ManyToManyField(Grouping, null=True)
+    group = models.ForeignKey(Group, null=True, blank=True) #Those two should be in another model, groups will change each year.
+    groupings = models.ManyToManyField(Grouping, null=True, blank=True)
 
     def __str__(self):
         return self.name +" "+ self.last_name_1 +" "+ self.last_name_2
@@ -69,10 +69,15 @@ class Student(models.Model):
                 self.picture.storage.delete(oldfile)
 
         # Save again to keep changes
-        super(Student, self).save(*args, **kwargs)
+            super(Student, self).save(*args, **kwargs)
 
     @property  # http://stackoverflow.com/a/16644591
     def picture_url(self):
         if self.picture and hasattr(self.picture, 'url'):
             return self.picture.url
 
+#class groupingyear(models.Model):
+    #student = models.ForeignKey(Student)
+    #schoolyear = models.TextField(default='')
+    #group = models.ForeignKey(Group, null=True, blank=True) #Those two should be in another model, groups will change each year.
+    #groupings = models.ManyToManyField(Grouping, null=True, blank=True)

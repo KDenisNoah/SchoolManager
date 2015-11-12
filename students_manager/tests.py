@@ -3,7 +3,7 @@ from django.test import TestCase
 from django.http import HttpRequest
 from django.template.loader import render_to_string
 from students_manager.views import student_manager_page, students_page, groups_page
-from students_manager.models import Student,Group
+from students_manager.models import Student,Group,Course
 
 
 class HomePageTest(TestCase):
@@ -30,9 +30,10 @@ class StudentsPageTest(TestCase):
     def test_students_page_can_save_a_POST_request(self):
         request = HttpRequest()
         request.method = 'POST'
-        request.POST['student_name'] = 'John'
-        request.POST['student_last_name_1'] = 'Doe'
-        request.POST['student_last_name_2'] = 'Student'
+        request.POST['name'] = 'John'
+        request.POST['last_name_1'] = 'Doe'
+        request.POST['last_name_2'] = 'Student'
+        request.POST['add_student']= 'OK'
 
         response = students_page(request)
 
@@ -48,7 +49,8 @@ class StudentsPageTest(TestCase):
         request.POST['student_name'] = 'John'
         request.POST['student_last_name_1'] = 'Doe'
         request.POST['student_last_name_2'] = 'Student'
-
+        request.POST['add_student']= 'OK'
+    
         response = students_page(request)
 
         self.assertEqual(response.status_code, 302)
@@ -92,24 +94,29 @@ class GroupsPageTest(TestCase):
     def test_groups_page_returns_correct_html(self):
         request = HttpRequest()
         response = groups_page(request)
-        expected_html = render_to_string('groups.html')
-        self.assertEqual(response.content.decode(), expected_html)
+        expected_html = render_to_string('groups.html') #The form and the groups list?
+        #self.maxDiff=None
+        self.assertHTMLEqual(response.content.decode(), expected_html)
 
     def test_groups_page_can_save_a_POST_request(self):
+        course = Course.objects.create(name='course1',year=1)
         request = HttpRequest()
         request.method = 'POST'
-        request.POST['group_name'] = 'A new group'
+        request.POST['name'] = 'A group'
+        request.POST['course'] = course.id
 
         response = groups_page(request)
 
         self.assertEqual(Group.objects.count(), 1)
         new_group = Group.objects.first()
-        self.assertEqual(new_group.name, 'A new group')
+        self.assertEqual(new_group.name, 'A group')
 
     def test_groups_page_redirects_after_POST(self):
+        course = Course.objects.create(name='course1',year=1)
         request = HttpRequest()
         request.method = 'POST'
-        request.POST['group_name'] = 'A new group'
+        request.POST['name'] = 'A group'
+        request.POST['course'] = course.id
 
         response = groups_page(request)
 
@@ -117,12 +124,15 @@ class GroupsPageTest(TestCase):
         self.assertEqual(response['location'], '/student_manager/groups/')  # notharcoded
 
     def test_saving_and_retrieving_groups(self):
+        course = Course.objects.create(name='course1',year=1)
         first_group = Group()
         first_group.name = 'The first (ever) group'
+        first_group.course = course
         first_group.save()
 
         second_group = Group()
         second_group.name = 'Group the second'
+        second_group.course = course
         second_group.save()
 
         saved_groups = Group.objects.all()
@@ -139,8 +149,9 @@ class GroupsPageTest(TestCase):
         self.assertEqual(Group.objects.count(), 0)
 
     def test_groups_page_displays_all_list_items(self):
-        Group.objects.create(name='group 1')
-        Group.objects.create(name='group 2')
+        course = Course.objects.create(name='course1',year=1)
+        Group.objects.create(name='group 1',course=course)
+        Group.objects.create(name='group 2',course=course)
 
         request = HttpRequest()
         response = groups_page(request)

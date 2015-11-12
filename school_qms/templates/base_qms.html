@@ -4,11 +4,11 @@
         <title>School QMS</title>
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <!-- Latest compiled and minified CSS -->
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
 
-<!-- Optional theme -->
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap-theme.min.css">
-<link rel="stylesheet" href="http://getbootstrap.com/examples/starter-template/starter-template.css">
+        <!-- Optional theme -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap-theme.min.css">
+        <link rel="stylesheet" href="http://getbootstrap.com/examples/starter-template/starter-template.css">
     </head>
     <body>
       <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
@@ -24,7 +24,8 @@
         </div>
         <div id="navbar" class="collapse navbar-collapse">
           <ul class="nav navbar-nav">
-            <li class="active"><a href="{% url 'qms' %}">Home</a></li>
+            <li><a href="{% url 'main_index' %}">Menu</a></li>
+                <li class="active"><a href="{% url 'qms' %}">QMS</a></li>
                 <li><a href="{% url 'processes' %}">Processes</a></li>
                 <li><a href="{% url 'procedures' %}">Procedures</a></li>
                 <li id="drop1" class="dropdown">
@@ -57,9 +58,11 @@
       </div>
 
     </div><!-- /.container -->
-<div class="footer">
-<img src="../../media/logo.jpg" width=10%>
-</div>
+        <footer class="navbar-fixed-bottom">
+        <a href="http://www.djangoproject.com/">
+        <img src="https://www.djangoproject.com/m/img/badges/djangomade124x25.gif" border="0" alt="Made with Django." title="Made with Django." /></a>
+        <img src="../../media/logo.jpg" width=10%>
+    </footer>
         <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
     <!-- Latest compiled and minified JavaScript -->
