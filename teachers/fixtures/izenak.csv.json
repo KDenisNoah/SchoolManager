@@ -1,0 +1,1692 @@
+[
+    {
+        "pk": 1,
+        "model": "teachers.Person",
+        "fields": {
+            "educacode": "006077ker",
+            "name": "Yasin Lorenzo",
+            "gender": "H",
+            "uniquename": "aerrealope",
+            "last_name_1": "Ahechu",
+            "last_name_2": "Zamora",
+            "email": "aerrealope@educacion.navarra.es"
+        }
+    },
+    {
+        "pk": 2,
+        "model": "teachers.Person",
+        "fields": {
+            "educacode": "021020acs",
+            "name": "Xabier",
+            "gender": "H",
+            "uniquename": "lmatanunez",
+            "last_name_1": "Albisu",
+            "last_name_2": "Indurain",
+            "email": "lmatanunez@educacion.navarra.es"
+        }
+    },
+    {
+        "pk": 3,
+        "model": "teachers.Person",
+        "fields": {
+            "educacode": "023019kor",
+            "name": "Xabier",
+            "gender": "M",
+            "uniquename": "crodrigper",
+            "last_name_1": "Albisu",
+            "last_name_2": "Galindo",
+            "email": "crodrigper@educacion.navarra.es"
+        }
+    },
+    {
+        "pk": 4,
+        "model": "teachers.Person",
+        "fields": {
+            "educacode": "023784jsg",
+            "name": "V\u00edctor",
+            "gender": "H",
+            "uniquename": "vgarciadel",
+            "last_name_1": "Alfranca",
+            "last_name_2": "Fraile",
+            "email": "vgarciadel@educacion.navarra.es"
+        }
+    },
+    {
+        "pk": 5,
+        "model": "teachers.Person",
+        "fields": {
+            "educacode": "024614mxv",
+            "name": "Victor",
+            "gender": "M",
+            "uniquename": "lreggiogar",
+            "last_name_1": "Andr\u00e9s",
+            "last_name_2": "Quezada",
+            "email": "lreggiogar@educacion.navarra.es"
+        }
+    },
+    {
+        "pk": 6,
+        "model": "teachers.Person",
+        "fields": {
+            "educacode": "027830dmd",
+            "name": "Unai",
+            "gender": "M",
+            "uniquename": "lessaoupac",
+            "last_name_1": "Anguita",
+            "last_name_2": "Villanueva",
+            "email": "lessaoupac@educacion.navarra.es"
+        }
+    },
+    {
+        "pk": 7,
+        "model": "teachers.Person",
+        "fields": {
+            "educacode": "028435teo",
+            "name": "Tania",
+            "gender": "M",
+            "uniquename": "ocabanaote",
+            "last_name_1": "Aparicio",
+            "last_name_2": "Blanco",
+            "email": "ocabanaote@educacion.navarra.es"
+        }
+    },
+    {
+        "pk": 8,
+        "model": "teachers.Person",
+        "fields": {
+            "educacode": "029496vse",
+            "name": "Sonia",
+            "gender": "M",
+            "uniquename": "smascarsan",
+            "last_name_1": "Aranguren",
+            "last_name_2": "Fern\u00e1ndez",
+            "email": "smascarsan@educacion.navarra.es"
+        }
+    },
+    {
+        "pk": 9,
+        "model": "teachers.Person",
+        "fields": {
+            "educacode": "029743gls",
+            "name": "Sofia",
+            "gender": "M",
+            "uniquename": "mseminaagu",
+            "last_name_1": "Ariz",
+            "last_name_2": "Lopes",
+            "email": "mseminaagu@educacion.navarra.es"
+        }
+    },
+    {
+        "pk": 10,
+        "model": "teachers.Person",
+        "fields": {
+            "educacode": "029832mui",
+            "name": "Sergio",
+            "gender": "H",
+            "uniquename": "iortizditu",
+            "last_name_1": "Arraiza",
+            "last_name_2": "Saralegui",
+            "email": "iortizditu@educacion.navarra.es"
+        }
+    },
+    {
+        "pk": 11,
+        "model": "teachers.Person",
+        "fields": {
+            "educacode": "029834zio",
+            "name": "Sara",
+            "gender": "H",
+            "uniquename": "jahechugar",
+            "last_name_1": "Arroyo",
+            "last_name_2": "Es-snibi",
+            "email": "jahechugar@educacion.navarra.es"
+        }
+    },
+    {
+        "pk": 12,
+        "model": "teachers.Person",
+        "fields": {
+            "educacode": "029835qzn",
+            "name": "Saioa",
+            "gender": "M",
+            "uniquename": "salbisufer",
+            "last_name_1": "Asensio",
+            "last_name_2": "Rubio",
+            "email": "salbisufer@educacion.navarra.es"
+        }
+    },
+    {
+        "pk": 13,
+        "model": "teachers.Person",
+        "fields": {
+            "educacode": "029836hqe",
+            "name": "Saioa",
+            "gender": "H",
+            "uniquename": "ualbisufer",
+            "last_name_1": "Asiain",
+            "last_name_2": "Aranguren",
+            "email": "ualbisufer@educacion.navarra.es"
+        }
+    },
+    {
+        "pk": 14,
+        "model": "teachers.Person",
+        "fields": {
+            "educacode": "029840kke",
+            "name": "Saioa",
+            "gender": "H",
+            "uniquename": "aarizherna",
+            "last_name_1": "Asiain",
+            "last_name_2": "Garcia",
+            "email": "aarizherna@educacion.navarra.es"
+        }
+    },
+    {
+        "pk": 15,
+        "model": "teachers.Person",
+        "fields": {
+            "educacode": "029841bjk",
+            "name": "Saioa",
+            "gender": "M",
+            "uniquename": "earroyoega",
+            "last_name_1": "Azcona",
+            "last_name_2": "Lapuente",
+            "email": "earroyoega@educacion.navarra.es"
+        }
+    },
+    {
+        "pk": 16,
+        "model": "teachers.Person",
+        "fields": {
+            "educacode": "029842hgb",
+            "name": "Rub\u00e9n",
+            "gender": "H",
+            "uniquename": "jasiainame",
+            "last_name_1": "Azpilicueta",
+            "last_name_2": "Ozcoidi",
+            "email": "jasiainame@educacion.navarra.es"
+        }
+    },
+    {
+        "pk": 17,
+        "model": "teachers.Person",
+        "fields": {
+            "educacode": "029844hcx",
+            "name": "Raul",
+            "gender": "M",
+            "uniquename": "iasiaindev1",
+            "last_name_1": "Barcos",
+            "last_name_2": "Sol\u00eds",
+            "email": "iasiaindev1@educacion.navarra.es"
+        }
+    },
+    {
+        "pk": 18,
+        "model": "teachers.Person",
+        "fields": {
+            "educacode": "029845riq",
+            "name": "Pablo",
+            "gender": "H",
+            "uniquename": "mazconanie",
+            "last_name_1": "Bartolom\u00e9",
+            "last_name_2": "Lapido",
+            "email": "mazconanie@educacion.navarra.es"
+        }
+    },
+    {
+        "pk": 19,
+        "model": "teachers.Person",
+        "fields": {
+            "educacode": "029847tcf",
+            "name": "Omaira",
+            "gender": "H",
+            "uniquename": "ibuenoboza",
+            "last_name_1": "Beorlegui",
+            "last_name_2": "Gonz\u00e1lez",
+            "email": "ibuenoboza@educacion.navarra.es"
+        }
+    },
+    {
+        "pk": 20,
+        "model": "teachers.Person",
+        "fields": {
+            "educacode": "029849xyd",
+            "name": "Oihane",
+            "gender": "M",
+            "uniquename": "egaleotose",
+            "last_name_1": "Berastegui",
+            "last_name_2": "Parrilla",
+            "email": "egaleotose@educacion.navarra.es"
+        }
+    },
+    {
+        "pk": 21,
+        "model": "teachers.Person",
+        "fields": {
+            "educacode": "029850gor",
+            "name": "Oihana",
+            "gender": "M",
+            "uniquename": "mazpilieli",
+            "last_name_1": "Bueno",
+            "last_name_2": "Aranguren",
+            "email": "mazpilieli@educacion.navarra.es"
+        }
+    },
+    {
+        "pk": 22,
+        "model": "teachers.Person",
+        "fields": {
+            "educacode": "029851bdc",
+            "name": "Oihan",
+            "gender": "M",
+            "uniquename": "tbarcoscas",
+            "last_name_1": "Caba\u00f1as",
+            "last_name_2": "Iturbide",
+            "email": "tbarcoscas@educacion.navarra.es"
+        }
+    },
+    {
+        "pk": 23,
+        "model": "teachers.Person",
+        "fields": {
+            "educacode": "029853yvv",
+            "name": "Nerea",
+            "gender": "H",
+            "uniquename": "icalerofer",
+            "last_name_1": "Cabezon",
+            "last_name_2": "Fonseca",
+            "email": "icalerofer@educacion.navarra.es"
+        }
+    },
+    {
+        "pk": 24,
+        "model": "teachers.Person",
+        "fields": {
+            "educacode": "029854bqn",
+            "name": "Miren",
+            "gender": "M",
+            "uniquename": "acaparrmor",
+            "last_name_1": "Calder\u00f3n",
+            "last_name_2": "Zubiri",
+            "email": "acaparrmor@educacion.navarra.es"
+        }
+    },
+    {
+        "pk": 25,
+        "model": "teachers.Person",
+        "fields": {
+            "educacode": "029856mdx",
+            "name": "Mireia",
+            "gender": "H",
+            "uniquename": "acirizamay",
+            "last_name_1": "Calero",
+            "last_name_2": "Garde",
+            "email": "acirizamay@educacion.navarra.es"
+        }
+    },
+    {
+        "pk": 26,
+        "model": "teachers.Person",
+        "fields": {
+            "educacode": "029859ftt",
+            "name": "Mikel",
+            "gender": "H",
+            "uniquename": "acortessol1",
+            "last_name_1": "Caparros",
+            "last_name_2": "Mart\u00ednez",
+            "email": "acortessol1@educacion.navarra.es"
+        }
+    },
+    {
+        "pk": 27,
+        "model": "teachers.Person",
+        "fields": {
+            "educacode": "029860sfh",
+            "name": "Mikel",
+            "gender": "H",
+            "uniquename": "mcortessol",
+            "last_name_1": "Castrill\u00f3n",
+            "last_name_2": "Grimal",
+            "email": "mcortessol@educacion.navarra.es"
+        }
+    },
+    {
+        "pk": 28,
+        "model": "teachers.Person",
+        "fields": {
+            "educacode": "029864ypz",
+            "name": "Mikel",
+            "gender": "H",
+            "uniquename": "eecharrmun",
+            "last_name_1": "Ciriza",
+            "last_name_2": "Arguedas",
+            "email": "eecharrmun@educacion.navarra.es"
+        }
+    },
+    {
+        "pk": 29,
+        "model": "teachers.Person",
+        "fields": {
+            "educacode": "029866pac",
+            "name": "Mikel",
+            "gender": "H",
+            "uniquename": "iechevearr",
+            "last_name_1": "Cort\u00e9s",
+            "last_name_2": "Migu\u00e9lez",
+            "email": "iechevearr@educacion.navarra.es"
+        }
+    },
+    {
+        "pk": 30,
+        "model": "teachers.Person",
+        "fields": {
+            "educacode": "029867rut",
+            "name": "Mikel",
+            "gender": "H",
+            "uniquename": "xechevearr",
+            "last_name_1": "Cort\u00e9s",
+            "last_name_2": "Campo Julian",
+            "email": "xechevearr@educacion.navarra.es"
+        }
+    },
+    {
+        "pk": 31,
+        "model": "teachers.Person",
+        "fields": {
+            "educacode": "029868swu",
+            "name": "Mikel",
+            "gender": "H",
+            "uniquename": "gecheveech",
+            "last_name_1": "Del",
+            "last_name_2": "Barrio Garc\u00eda",
+            "email": "gecheveech@educacion.navarra.es"
+        }
+    },
+    {
+        "pk": 32,
+        "model": "teachers.Person",
+        "fields": {
+            "educacode": "029869cjk",
+            "name": "Mikel",
+            "gender": "M",
+            "uniquename": "sesarteado",
+            "last_name_1": "Del",
+            "last_name_2": "Fern\u00e1ndez",
+            "email": "sesarteado@educacion.navarra.es"
+        }
+    },
+    {
+        "pk": 33,
+        "model": "teachers.Person",
+        "fields": {
+            "educacode": "029870loc",
+            "name": "Mikel",
+            "gender": "H",
+            "uniquename": "despanarod",
+            "last_name_1": "D\u00edaz",
+            "last_name_2": "Lazaro",
+            "email": "despanarod@educacion.navarra.es"
+        }
+    },
+    {
+        "pk": 34,
+        "model": "teachers.Person",
+        "fields": {
+            "educacode": "029871ykj",
+            "name": "Miguel Angel",
+            "gender": "M",
+            "uniquename": "iestalaari",
+            "last_name_1": "Echarri",
+            "last_name_2": "Jur\u00edo",
+            "email": "iestalaari@educacion.navarra.es"
+        }
+    },
+    {
+        "pk": 35,
+        "model": "teachers.Person",
+        "fields": {
+            "educacode": "029872ieu",
+            "name": "Mart\u00edn",
+            "gender": "H",
+            "uniquename": "jetayoascu",
+            "last_name_1": "Echeverria",
+            "last_name_2": "Garayoa",
+            "email": "jetayoascu@educacion.navarra.es"
+        }
+    },
+    {
+        "pk": 36,
+        "model": "teachers.Person",
+        "fields": {
+            "educacode": "029873ruq",
+            "name": "Mar\u00eda Teresa",
+            "gender": "M",
+            "uniquename": "sezcurrhua",
+            "last_name_1": "Echeverria",
+            "last_name_2": "Lopez De Abechuco",
+            "email": "sezcurrhua@educacion.navarra.es"
+        }
+    },
+    {
+        "pk": 37,
+        "model": "teachers.Person",
+        "fields": {
+            "educacode": "029877vwi",
+            "name": "Mar\u00eda",
+            "gender": "H",
+            "uniquename": "dfresanres",
+            "last_name_1": "Echeverr\u00eda",
+            "last_name_2": "Sancho",
+            "email": "dfresanres@educacion.navarra.es"
+        }
+    },
+    {
+        "pk": 38,
+        "model": "teachers.Person",
+        "fields": {
+            "educacode": "029878jtv",
+            "name": "Maria",
+            "gender": "M",
+            "uniquename": "igalarzvil",
+            "last_name_1": "Echeverr\u00eda",
+            "last_name_2": "Bara",
+            "email": "igalarzvil@educacion.navarra.es"
+        }
+    },
+    {
+        "pk": 39,
+        "model": "teachers.Person",
+        "fields": {
+            "educacode": "029883zch",
+            "name": "Marcos",
+            "gender": "M",
+            "uniquename": "igoicoavil",
+            "last_name_1": "Elizalde",
+            "last_name_2": "Ruiz De Erenchun",
+            "email": "igoicoavil@educacion.navarra.es"
+        }
+    },
+    {
+        "pk": 40,
+        "model": "teachers.Person",
+        "fields": {
+            "educacode": "029884ucx",
+            "name": "Manel",
+            "gender": "M",
+            "uniquename": "agoicoafer1",
+            "last_name_1": "Elizari",
+            "last_name_2": "Le\u00f3n",
+            "email": "agoicoafer1@educacion.navarra.es"
+        }
+    },
+    {
+        "pk": 41,
+        "model": "teachers.Person",
+        "fields": {
+            "educacode": "029885jqb",
+            "name": "Maider",
+            "gender": "H",
+            "uniquename": "ogonzalust",
+            "last_name_1": "Elizondo",
+            "last_name_2": "Arag\u00f3n",
+            "email": "ogonzalust@educacion.navarra.es"
+        }
+    },
+    {
+        "pk": 42,
+        "model": "teachers.Person",
+        "fields": {
+            "educacode": "029886nel",
+            "name": "Maider",
+            "gender": "H",
+            "uniquename": "dgonihough",
+            "last_name_1": "Errea",
+            "last_name_2": "Go\u00f1i",
+            "email": "dgonihough@educacion.navarra.es"
+        }
+    },
+    {
+        "pk": 43,
+        "model": "teachers.Person",
+        "fields": {
+            "educacode": "029889wxd",
+            "name": "Maialen",
+            "gender": "H",
+            "uniquename": "miberoalej",
+            "last_name_1": "Esarte",
+            "last_name_2": "Erro",
+            "email": "miberoalej@educacion.navarra.es"
+        }
+    },
+    {
+        "pk": 44,
+        "model": "teachers.Person",
+        "fields": {
+            "educacode": "029890usm",
+            "name": "Maialen",
+            "gender": "M",
+            "uniquename": "siberomart",
+            "last_name_1": "Espa\u00f1a",
+            "last_name_2": "Carceller",
+            "email": "siberomart@educacion.navarra.es"
+        }
+    },
+    {
+        "pk": 45,
+        "model": "teachers.Person",
+        "fields": {
+            "educacode": "029891hvw",
+            "name": "Luis Ernesto",
+            "gender": "H",
+            "uniquename": "iiriartarr",
+            "last_name_1": "Essaouari",
+            "last_name_2": "Rodr\u00edguez",
+            "email": "iiriartarr@educacion.navarra.es"
+        }
+    },
+    {
+        "pk": 46,
+        "model": "teachers.Person",
+        "fields": {
+            "educacode": "029893ipc",
+            "name": "Luis",
+            "gender": "M",
+            "uniquename": "iirigoycha",
+            "last_name_1": "Estala",
+            "last_name_2": "Palacios",
+            "email": "iirigoycha@educacion.navarra.es"
+        }
+    },
+    {
+        "pk": 47,
+        "model": "teachers.Person",
+        "fields": {
+            "educacode": "029894elh",
+            "name": "Luciana",
+            "gender": "H",
+            "uniquename": "jiturrator",
+            "last_name_1": "Etayo",
+            "last_name_2": "Mart\u00ednez",
+            "email": "jiturrator@educacion.navarra.es"
+        }
+    },
+    {
+        "pk": 48,
+        "model": "teachers.Person",
+        "fields": {
+            "educacode": "029895sgg",
+            "name": "Leire",
+            "gender": "M",
+            "uniquename": "alanamarti",
+            "last_name_1": "Etayo",
+            "last_name_2": "Viana",
+            "email": "alanamarti@educacion.navarra.es"
+        }
+    },
+    {
+        "pk": 49,
+        "model": "teachers.Person",
+        "fields": {
+            "educacode": "029936gfl",
+            "name": "Layla",
+            "gender": "M",
+            "uniquename": "murtasuvil",
+            "last_name_1": "Etayo",
+            "last_name_2": "Martinez",
+            "email": "murtasuvil@educacion.navarra.es"
+        }
+    },
+    {
+        "pk": 50,
+        "model": "teachers.Person",
+        "fields": {
+            "educacode": "029940yxe",
+            "name": "Laura",
+            "gender": "M",
+            "uniquename": "ccabezoech",
+            "last_name_1": "Eugui",
+            "last_name_2": "Sat\u00f3stegui",
+            "email": "ccabezoech@educacion.navarra.es"
+        }
+    },
+    {
+        "pk": 51,
+        "model": "teachers.Person",
+        "fields": {
+            "educacode": "029951zvw",
+            "name": "Julen",
+            "gender": "H",
+            "uniquename": "jranmurill",
+            "last_name_1": "Ezcurra",
+            "last_name_2": "Platero",
+            "email": "jranmurill@educacion.navarra.es"
+        }
+    },
+    {
+        "pk": 52,
+        "model": "teachers.Person",
+        "fields": {
+            "educacode": "029980abj",
+            "name": "Julen",
+            "gender": "H",
+            "uniquename": "jlopezzaba1",
+            "last_name_1": "Fontecha",
+            "last_name_2": "Rold\u00e1n",
+            "email": "jlopezzaba1@educacion.navarra.es"
+        }
+    },
+    {
+        "pk": 53,
+        "model": "teachers.Person",
+        "fields": {
+            "educacode": "029981twy",
+            "name": "Julen",
+            "gender": "M",
+            "uniquename": "amaeztuece",
+            "last_name_1": "Fres\u00e1n",
+            "last_name_2": "Labari",
+            "email": "amaeztuece@educacion.navarra.es"
+        }
+    },
+    {
+        "pk": 54,
+        "model": "teachers.Person",
+        "fields": {
+            "educacode": "029982sog",
+            "name": "Julen",
+            "gender": "H",
+            "uniquename": "jmartincar",
+            "last_name_1": "Gal\u00e1n",
+            "last_name_2": "Luri",
+            "email": "jmartincar@educacion.navarra.es"
+        }
+    },
+    {
+        "pk": 55,
+        "model": "teachers.Person",
+        "fields": {
+            "educacode": "029983flw",
+            "name": "Julen",
+            "gender": "M",
+            "uniquename": "imerindcol",
+            "last_name_1": "Galarza",
+            "last_name_2": "Zalaya",
+            "email": "imerindcol@educacion.navarra.es"
+        }
+    },
+    {
+        "pk": 56,
+        "model": "teachers.Person",
+        "fields": {
+            "educacode": "029985sta",
+            "name": "Julen",
+            "gender": "H",
+            "uniquename": "hmujikaleo",
+            "last_name_1": "Galeotti",
+            "last_name_2": "Ardanaz",
+            "email": "hmujikaleo@educacion.navarra.es"
+        }
+    },
+    {
+        "pk": 57,
+        "model": "teachers.Person",
+        "fields": {
+            "educacode": "029990ruo",
+            "name": "Julen",
+            "gender": "H",
+            "uniquename": "anavarrech",
+            "last_name_1": "Galera",
+            "last_name_2": "Gallego",
+            "email": "anavarrech@educacion.navarra.es"
+        }
+    },
+    {
+        "pk": 58,
+        "model": "teachers.Person",
+        "fields": {
+            "educacode": "029991muu",
+            "name": "Josu",
+            "gender": "H",
+            "uniquename": "anavarrgas",
+            "last_name_1": "Garc\u00eda",
+            "last_name_2": "Orta",
+            "email": "anavarrgas@educacion.navarra.es"
+        }
+    },
+    {
+        "pk": 59,
+        "model": "teachers.Person",
+        "fields": {
+            "educacode": "029992jcj",
+            "name": "Jone",
+            "gender": "H",
+            "uniquename": "mortizirig",
+            "last_name_1": "Garc\u00eda",
+            "last_name_2": "Oronoz",
+            "email": "mortizirig@educacion.navarra.es"
+        }
+    },
+    {
+        "pk": 60,
+        "model": "teachers.Person",
+        "fields": {
+            "educacode": "029993qai",
+            "name": "Jonathan",
+            "gender": "H",
+            "uniquename": "rruizlizar",
+            "last_name_1": "Garc\u00eda",
+            "last_name_2": "Torres",
+            "email": "rruizlizar@educacion.navarra.es"
+        }
+    },
+    {
+        "pk": 61,
+        "model": "teachers.Person",
+        "fields": {
+            "educacode": "029994fbu",
+            "name": "Jon",
+            "gender": "M",
+            "uniquename": "asadamugue",
+            "last_name_1": "Garde",
+            "last_name_2": "Ibiricu",
+            "email": "asadamugue@educacion.navarra.es"
+        }
+    },
+    {
+        "pk": 62,
+        "model": "teachers.Person",
+        "fields": {
+            "educacode": "029995dxu",
+            "name": "Joanna",
+            "gender": "H",
+            "uniquename": "asaraguerb",
+            "last_name_1": "Goicoa",
+            "last_name_2": "Monasterio",
+            "email": "asaraguerb@educacion.navarra.es"
+        }
+    },
+    {
+        "pk": 63,
+        "model": "teachers.Person",
+        "fields": {
+            "educacode": "029996pcq",
+            "name": "Jes\u00fas",
+            "gender": "M",
+            "uniquename": "iseminaper",
+            "last_name_1": "Goicoa",
+            "last_name_2": "Ustarroz",
+            "email": "iseminaper@educacion.navarra.es"
+        }
+    },
+    {
+        "pk": 64,
+        "model": "teachers.Person",
+        "fields": {
+            "educacode": "029997aqk",
+            "name": "Javier",
+            "gender": "H",
+            "uniquename": "eserranizc",
+            "last_name_1": "G\u00f3mez",
+            "last_name_2": "Blanco",
+            "email": "eserranizc@educacion.navarra.es"
+        }
+    },
+    {
+        "pk": 65,
+        "model": "teachers.Person",
+        "fields": {
+            "educacode": "029998elx",
+            "name": "Janire",
+            "gender": "M",
+            "uniquename": "mtorbisher",
+            "last_name_1": "Go\u00f1i",
+            "last_name_2": "Legasa",
+            "email": "mtorbisher@educacion.navarra.es"
+        }
+    },
+    {
+        "pk": 66,
+        "model": "teachers.Person",
+        "fields": {
+            "educacode": "029999jqg",
+            "name": "Iv\u00e1n",
+            "gender": "M",
+            "uniquename": "surdanoleg",
+            "last_name_1": "Gonzalez",
+            "last_name_2": "Hervas",
+            "email": "surdanoleg@educacion.navarra.es"
+        }
+    },
+    {
+        "pk": 67,
+        "model": "teachers.Person",
+        "fields": {
+            "educacode": "030000uox",
+            "name": "Itsaso",
+            "gender": "M",
+            "uniquename": "ourrablanc",
+            "last_name_1": "Gonzalez",
+            "last_name_2": "Izcue",
+            "email": "ourrablanc@educacion.navarra.es"
+        }
+    },
+    {
+        "pk": 68,
+        "model": "teachers.Person",
+        "fields": {
+            "educacode": "030001hvi",
+            "name": "Itsaso",
+            "gender": "H",
+            "uniquename": "bvalleusta",
+            "last_name_1": "Guembe",
+            "last_name_2": "Perez",
+            "email": "bvalleusta@educacion.navarra.es"
+        }
+    },
+    {
+        "pk": 69,
+        "model": "teachers.Person",
+        "fields": {
+            "educacode": "030002hdi",
+            "name": "Irune",
+            "gender": "H",
+            "uniquename": "eventurmon",
+            "last_name_1": "Guerrero",
+            "last_name_2": "Erburu",
+            "email": "eventurmon@educacion.navarra.es"
+        }
+    },
+    {
+        "pk": 70,
+        "model": "teachers.Person",
+        "fields": {
+            "educacode": "030003dae",
+            "name": "Irma Elena",
+            "gender": "H",
+            "uniquename": "mzabalzibi",
+            "last_name_1": "Huarte",
+            "last_name_2": "Mugueta",
+            "email": "mzabalzibi@educacion.navarra.es"
+        }
+    },
+    {
+        "pk": 71,
+        "model": "teachers.Person",
+        "fields": {
+            "educacode": "030005vcq",
+            "name": "Irene",
+            "gender": "H",
+            "uniquename": "iziritztor",
+            "last_name_1": "Huarte",
+            "last_name_2": "Lizarraga",
+            "email": "iziritztor@educacion.navarra.es"
+        }
+    },
+    {
+        "pk": 72,
+        "model": "teachers.Person",
+        "fields": {
+            "educacode": "030067gaa",
+            "name": "Irene",
+            "gender": "H",
+            "uniquename": "mgarciaoro",
+            "last_name_1": "Ibero",
+            "last_name_2": "Irigoyen",
+            "email": "mgarciaoro@educacion.navarra.es"
+        }
+    },
+    {
+        "pk": 73,
+        "model": "teachers.Person",
+        "fields": {
+            "educacode": "030069bzc",
+            "name": "Irene",
+            "gender": "H",
+            "uniquename": "amartiaort",
+            "last_name_1": "Ibero",
+            "last_name_2": "Gastearena",
+            "email": "amartiaort@educacion.navarra.es"
+        }
+    },
+    {
+        "pk": 74,
+        "model": "teachers.Person",
+        "fields": {
+            "educacode": "030093uvy",
+            "name": "Iranzu",
+            "gender": "M",
+            "uniquename": "moyanargal",
+            "last_name_1": "Iriarte",
+            "last_name_2": "Echag\u00fce",
+            "email": "moyanargal@educacion.navarra.es"
+        }
+    },
+    {
+        "pk": 75,
+        "model": "teachers.Person",
+        "fields": {
+            "educacode": "030094sma",
+            "name": "Iranzu",
+            "gender": "H",
+            "uniquename": "moyarzuard",
+            "last_name_1": "Iribarren",
+            "last_name_2": "Le\u00f3n",
+            "email": "moyarzuard@educacion.navarra.es"
+        }
+    },
+    {
+        "pk": 76,
+        "model": "teachers.Person",
+        "fields": {
+            "educacode": "030095nmr",
+            "name": "\u00cd\u00f1igo",
+            "gender": "M",
+            "uniquename": "moyeregzal",
+            "last_name_1": "Irigoyen",
+            "last_name_2": "Colomo",
+            "email": "moyeregzal@educacion.navarra.es"
+        }
+    },
+    {
+        "pk": 77,
+        "model": "teachers.Person",
+        "fields": {
+            "educacode": "030096svx",
+            "name": "Imanol",
+            "gender": "H",
+            "uniquename": "lparraluri",
+            "last_name_1": "Iturralde",
+            "last_name_2": "Carricas",
+            "email": "lparraluri@educacion.navarra.es"
+        }
+    },
+    {
+        "pk": 78,
+        "model": "teachers.Person",
+        "fields": {
+            "educacode": "030099fiw",
+            "name": "Ikerne",
+            "gender": "M",
+            "uniquename": "lperezlaba",
+            "last_name_1": "Jaurrieta",
+            "last_name_2": "Eceolaza",
+            "email": "lperezlaba@educacion.navarra.es"
+        }
+    },
+    {
+        "pk": 79,
+        "model": "teachers.Person",
+        "fields": {
+            "educacode": "030102yjr",
+            "name": "Iker",
+            "gender": "H",
+            "uniquename": "mpineirrol",
+            "last_name_1": "Lana",
+            "last_name_2": "Zabalza",
+            "email": "mpineirrol@educacion.navarra.es"
+        }
+    },
+    {
+        "pk": 80,
+        "model": "teachers.Person",
+        "fields": {
+            "educacode": "030103thj",
+            "name": "Iker",
+            "gender": "M",
+            "uniquename": "gplaterzub",
+            "last_name_1": "Larr\u00e1yoz",
+            "last_name_2": "Murillo",
+            "email": "gplaterzub@educacion.navarra.es"
+        }
+    },
+    {
+        "pk": 81,
+        "model": "teachers.Person",
+        "fields": {
+            "educacode": "030104gnn",
+            "name": "Iker",
+            "gender": "H",
+            "uniquename": "arazquisat",
+            "last_name_1": "Lasterra",
+            "last_name_2": "Echeverria",
+            "email": "arazquisat@educacion.navarra.es"
+        }
+    },
+    {
+        "pk": 82,
+        "model": "teachers.Person",
+        "fields": {
+            "educacode": "030106zgp",
+            "name": "Ienego",
+            "gender": "M",
+            "uniquename": "arodrigmar3",
+            "last_name_1": "Lategui",
+            "last_name_2": "Villabona",
+            "email": "arodrigmar3@educacion.navarra.es"
+        }
+    },
+    {
+        "pk": 83,
+        "model": "teachers.Person",
+        "fields": {
+            "educacode": "030113sst",
+            "name": "Ibai",
+            "gender": "M",
+            "uniquename": "irinconvia",
+            "last_name_1": "L\u00f3pez",
+            "last_name_2": "Mart\u00ednez",
+            "email": "irinconvia@educacion.navarra.es"
+        }
+    },
+    {
+        "pk": 84,
+        "model": "teachers.Person",
+        "fields": {
+            "educacode": "030149cod",
+            "name": "Hodei",
+            "gender": "H",
+            "uniquename": "mlarraymar1",
+            "last_name_1": "L\u00f3pez",
+            "last_name_2": "Torres",
+            "email": "mlarraymar1@educacion.navarra.es"
+        }
+    },
+    {
+        "pk": 85,
+        "model": "teachers.Person",
+        "fields": {
+            "educacode": "030150llr",
+            "name": "Garikoitz",
+            "gender": "H",
+            "uniquename": "oredinpala",
+            "last_name_1": "Maestu",
+            "last_name_2": "Chavez",
+            "email": "oredinpala@educacion.navarra.es"
+        }
+    },
+    {
+        "pk": 86,
+        "model": "teachers.Person",
+        "fields": {
+            "educacode": "030175hnv",
+            "name": "Garazi",
+            "gender": "H",
+            "uniquename": "cbeorlerod",
+            "last_name_1": "Maeztu",
+            "last_name_2": "Arrese",
+            "email": "cbeorlerod@educacion.navarra.es"
+        }
+    },
+    {
+        "pk": 87,
+        "model": "teachers.Person",
+        "fields": {
+            "educacode": "030184mxa",
+            "name": "Eloi",
+            "gender": "M",
+            "uniquename": "lelizarcar",
+            "last_name_1": "Majo",
+            "last_name_2": "Martinez",
+            "email": "lelizarcar@educacion.navarra.es"
+        }
+    },
+    {
+        "pk": 88,
+        "model": "teachers.Person",
+        "fields": {
+            "educacode": "030189arp",
+            "name": "Elisa",
+            "gender": "M",
+            "uniquename": "ilateguerr",
+            "last_name_1": "Marcos",
+            "last_name_2": "Alejos",
+            "email": "ilateguerr@educacion.navarra.es"
+        }
+    },
+    {
+        "pk": 89,
+        "model": "teachers.Person",
+        "fields": {
+            "educacode": "031265bch",
+            "name": "Egoi",
+            "gender": "H",
+            "uniquename": "jalfrangon",
+            "last_name_1": "Martiartu",
+            "last_name_2": "Houghton",
+            "email": "jalfrangon@educacion.navarra.es"
+        }
+    },
+    {
+        "pk": 90,
+        "model": "teachers.Person",
+        "fields": {
+            "educacode": "031268gtx",
+            "name": "Edurne",
+            "gender": "M",
+            "uniquename": "aandresara",
+            "last_name_1": "Martin",
+            "last_name_2": "Ustarroz",
+            "email": "aandresara@educacion.navarra.es"
+        }
+    },
+    {
+        "pk": 91,
+        "model": "teachers.Person",
+        "fields": {
+            "educacode": "031269etq",
+            "name": "Edurne",
+            "gender": "H",
+            "uniquename": "janguitleo",
+            "last_name_1": "Mascarell",
+            "last_name_2": "Fernandez",
+            "email": "janguitleo@educacion.navarra.es"
+        }
+    },
+    {
+        "pk": 92,
+        "model": "teachers.Person",
+        "fields": {
+            "educacode": "031271xru",
+            "name": "Edur",
+            "gender": "H",
+            "uniquename": "iaparicrui",
+            "last_name_1": "Mata",
+            "last_name_2": "Vildarraz",
+            "email": "iaparicrui@educacion.navarra.es"
+        }
+    },
+    {
+        "pk": 93,
+        "model": "teachers.Person",
+        "fields": {
+            "educacode": "031272mbl",
+            "name": "David",
+            "gender": "M",
+            "uniquename": "marangubar",
+            "last_name_1": "Melero",
+            "last_name_2": "Villalobos",
+            "email": "marangubar@educacion.navarra.es"
+        }
+    },
+    {
+        "pk": 94,
+        "model": "teachers.Person",
+        "fields": {
+            "educacode": "031273lrb",
+            "name": "Daniel",
+            "gender": "H",
+            "uniquename": "marraizsan",
+            "last_name_1": "Mendioroz",
+            "last_name_2": "Restituto",
+            "email": "marraizsan@educacion.navarra.es"
+        }
+    },
+    {
+        "pk": 95,
+        "model": "teachers.Person",
+        "fields": {
+            "educacode": "031276nbe",
+            "name": "Daniel",
+            "gender": "H",
+            "uniquename": "vasensilop",
+            "last_name_1": "Merindano",
+            "last_name_2": "Huarte",
+            "email": "vasensilop@educacion.navarra.es"
+        }
+    },
+    {
+        "pk": 96,
+        "model": "teachers.Person",
+        "fields": {
+            "educacode": "031279rqt",
+            "name": "Daniel",
+            "gender": "H",
+            "uniquename": "jbartolgar",
+            "last_name_1": "Moraza",
+            "last_name_2": "Ascunce",
+            "email": "jbartolgar@educacion.navarra.es"
+        }
+    },
+    {
+        "pk": 97,
+        "model": "teachers.Person",
+        "fields": {
+            "educacode": "031281kpy",
+            "name": "Cristina",
+            "gender": "M",
+            "uniquename": "apozajurio",
+            "last_name_1": "Mujika",
+            "last_name_2": "Arias",
+            "email": "apozajurio@educacion.navarra.es"
+        }
+    },
+    {
+        "pk": 98,
+        "model": "teachers.Person",
+        "fields": {
+            "educacode": "031283qwq",
+            "name": "Clara",
+            "gender": "M",
+            "uniquename": "aberastlaz",
+            "last_name_1": "Navarro",
+            "last_name_2": "Rodriguez",
+            "email": "aberastlaz@educacion.navarra.es"
+        }
+    },
+    {
+        "pk": 99,
+        "model": "teachers.Person",
+        "fields": {
+            "educacode": "031285yku",
+            "name": "Cinthya Gabriela",
+            "gender": "M",
+            "uniquename": "mcalderfer",
+            "last_name_1": "Navarro",
+            "last_name_2": "Adot",
+            "email": "mcalderfer@educacion.navarra.es"
+        }
+    },
+    {
+        "pk": 100,
+        "model": "teachers.Person",
+        "fields": {
+            "educacode": "031286jwt",
+            "name": "Christian",
+            "gender": "M",
+            "uniquename": "cdelbargar",
+            "last_name_1": "Ortiz",
+            "last_name_2": "Echeverria",
+            "email": "cdelbargar@educacion.navarra.es"
+        }
+    },
+    {
+        "pk": 101,
+        "model": "teachers.Person",
+        "fields": {
+            "educacode": "031287kog",
+            "name": "Catia Sofia",
+            "gender": "H",
+            "uniquename": "mdelcamjul",
+            "last_name_1": "Ortiz",
+            "last_name_2": "Arroyo",
+            "email": "mdelcamjul@educacion.navarra.es"
+        }
+    },
+    {
+        "pk": 102,
+        "model": "teachers.Person",
+        "fields": {
+            "educacode": "031289dnz",
+            "name": "Be\u00f1at",
+            "gender": "M",
+            "uniquename": "jdiazmigue",
+            "last_name_1": "Oyanarte",
+            "last_name_2": "Arroyo",
+            "email": "jdiazmigue@educacion.navarra.es"
+        }
+    },
+    {
+        "pk": 103,
+        "model": "teachers.Person",
+        "fields": {
+            "educacode": "031290oam",
+            "name": "Asier",
+            "gender": "H",
+            "uniquename": "jechevearg",
+            "last_name_1": "Oyarzun",
+            "last_name_2": "Munarriz",
+            "email": "jechevearg@educacion.navarra.es"
+        }
+    },
+    {
+        "pk": 104,
+        "model": "teachers.Person",
+        "fields": {
+            "educacode": "031293lbp",
+            "name": "Asier",
+            "gender": "H",
+            "uniquename": "aelizalgri",
+            "last_name_1": "Oyeregui",
+            "last_name_2": "Sola",
+            "email": "aelizalgri@educacion.navarra.es"
+        }
+    },
+    {
+        "pk": 105,
+        "model": "teachers.Person",
+        "fields": {
+            "educacode": "031294erq",
+            "name": "Asier",
+            "gender": "H",
+            "uniquename": "delizonmar",
+            "last_name_1": "Parra",
+            "last_name_2": "Sola",
+            "email": "delizonmar@educacion.navarra.es"
+        }
+    },
+    {
+        "pk": 106,
+        "model": "teachers.Person",
+        "fields": {
+            "educacode": "031297xdh",
+            "name": "Aroa",
+            "gender": "M",
+            "uniquename": "aetayogard",
+            "last_name_1": "Perez",
+            "last_name_2": "Mayo",
+            "email": "aetayogard@educacion.navarra.es"
+        }
+    },
+    {
+        "pk": 107,
+        "model": "teachers.Person",
+        "fields": {
+            "educacode": "031298xsj",
+            "name": "Arkaitz",
+            "gender": "H",
+            "uniquename": "aetayozubi",
+            "last_name_1": "Pi\u00f1eiro",
+            "last_name_2": "Moreno",
+            "email": "aetayozubi@educacion.navarra.es"
+        }
+    },
+    {
+        "pk": 108,
+        "model": "teachers.Person",
+        "fields": {
+            "educacode": "031299zes",
+            "name": "Aritz",
+            "gender": "H",
+            "uniquename": "meuguifons",
+            "last_name_1": "Poza",
+            "last_name_2": "Fernandez",
+            "email": "meuguifons@educacion.navarra.es"
+        }
+    },
+    {
+        "pk": 109,
+        "model": "teachers.Person",
+        "fields": {
+            "educacode": "031300ebk",
+            "name": "Angela",
+            "gender": "H",
+            "uniquename": "sfonteci",
+            "last_name_1": "Ran",
+            "last_name_2": "Castera",
+            "email": "sfonteci@educacion.navarra.es"
+        }
+    },
+    {
+        "pk": 110,
+        "model": "teachers.Person",
+        "fields": {
+            "educacode": "031302xqt",
+            "name": "Andoni",
+            "gender": "M",
+            "uniquename": "jgalanaran",
+            "last_name_1": "Razquin",
+            "last_name_2": "Elia",
+            "email": "jgalanaran@educacion.navarra.es"
+        }
+    },
+    {
+        "pk": 111,
+        "model": "teachers.Person",
+        "fields": {
+            "educacode": "031303zhs",
+            "name": "Ander",
+            "gender": "M",
+            "uniquename": "igalerapar",
+            "last_name_1": "Redin",
+            "last_name_2": "Oses",
+            "email": "igalerapar@educacion.navarra.es"
+        }
+    },
+    {
+        "pk": 112,
+        "model": "teachers.Person",
+        "fields": {
+            "educacode": "031305xgq",
+            "name": "Ana Bel\u00e9n",
+            "gender": "H",
+            "uniquename": "agarciagon2",
+            "last_name_1": "Reggio",
+            "last_name_2": "Bozal",
+            "email": "agarciagon2@educacion.navarra.es"
+        }
+    },
+    {
+        "pk": 113,
+        "model": "teachers.Person",
+        "fields": {
+            "educacode": "031306dlm",
+            "name": "Ana",
+            "gender": "M",
+            "uniquename": "egardelapi",
+            "last_name_1": "Rinc\u00f3n",
+            "last_name_2": "Nieva",
+            "email": "egardelapi@educacion.navarra.es"
+        }
+    },
+    {
+        "pk": 114,
+        "model": "teachers.Person",
+        "fields": {
+            "educacode": "031308xtf",
+            "name": "Ana",
+            "gender": "H",
+            "uniquename": "agomezsoli",
+            "last_name_1": "Rodrigues",
+            "last_name_2": "Devora",
+            "email": "agomezsoli@educacion.navarra.es"
+        }
+    },
+    {
+        "pk": 115,
+        "model": "teachers.Person",
+        "fields": {
+            "educacode": "031309ill",
+            "name": "Amaia",
+            "gender": "H",
+            "uniquename": "pgonzalozc",
+            "last_name_1": "Rodriguez",
+            "last_name_2": "Amezqueta",
+            "email": "pgonzalozc@educacion.navarra.es"
+        }
+    },
+    {
+        "pk": 116,
+        "model": "teachers.Person",
+        "fields": {
+            "educacode": "031310eaj",
+            "name": "Amaia",
+            "gender": "M",
+            "uniquename": "aguembelap",
+            "last_name_1": "Ruiz",
+            "last_name_2": "Ega\u00f1a",
+            "email": "aguembelap@educacion.navarra.es"
+        }
+    },
+    {
+        "pk": 117,
+        "model": "teachers.Person",
+        "fields": {
+            "educacode": "031311ttm",
+            "name": "Amaia",
+            "gender": "M",
+            "uniquename": "mguerregar",
+            "last_name_1": "Sada",
+            "last_name_2": "Hernandez",
+            "email": "mguerregar@educacion.navarra.es"
+        }
+    },
+    {
+        "pk": 118,
+        "model": "teachers.Person",
+        "fields": {
+            "educacode": "031313dov",
+            "name": "Amaia",
+            "gender": "M",
+            "uniquename": "nhuarteara",
+            "last_name_1": "Sarag\u00fceta",
+            "last_name_2": "Fern\u00e1ndez",
+            "email": "nhuarteara@educacion.navarra.es"
+        }
+    },
+    {
+        "pk": 119,
+        "model": "teachers.Person",
+        "fields": {
+            "educacode": "031314kuc",
+            "name": "\u00c1lvaro",
+            "gender": "H",
+            "uniquename": "xhuarterub",
+            "last_name_1": "Seminario",
+            "last_name_2": "Fernandez",
+            "email": "xhuarterub@educacion.navarra.es"
+        }
+    },
+    {
+        "pk": 120,
+        "model": "teachers.Person",
+        "fields": {
+            "educacode": "031317pcw",
+            "name": "Alex",
+            "gender": "H",
+            "uniquename": "yiribaress",
+            "last_name_1": "Seminario",
+            "last_name_2": "Garro",
+            "email": "yiribaress@educacion.navarra.es"
+        }
+    },
+    {
+        "pk": 121,
+        "model": "teachers.Person",
+        "fields": {
+            "educacode": "031319uzg",
+            "name": "Alejandro",
+            "gender": "M",
+            "uniquename": "ajaurrisar",
+            "last_name_1": "Serrano",
+            "last_name_2": "De Murua Iturralde",
+            "email": "ajaurrisar@educacion.navarra.es"
+        }
+    },
+    {
+        "pk": 122,
+        "model": "teachers.Person",
+        "fields": {
+            "educacode": "031320pxy",
+            "name": "Alberto",
+            "gender": "H",
+            "uniquename": "ilasterlop",
+            "last_name_1": "Torbisco",
+            "last_name_2": "Aguirre",
+            "email": "ilasterlop@educacion.navarra.es"
+        }
+    },
+    {
+        "pk": 123,
+        "model": "teachers.Person",
+        "fields": {
+            "educacode": "031323tpy",
+            "name": "Aitziber",
+            "gender": "H",
+            "uniquename": "jlopezfern",
+            "last_name_1": "Urdanoz",
+            "last_name_2": "Sanchis",
+            "email": "jlopezfern@educacion.navarra.es"
+        }
+    },
+    {
+        "pk": 124,
+        "model": "teachers.Person",
+        "fields": {
+            "educacode": "031325wsh",
+            "name": "Aitor",
+            "gender": "H",
+            "uniquename": "amaestubla",
+            "last_name_1": "Urra",
+            "last_name_2": "Oteiza",
+            "email": "amaestubla@educacion.navarra.es"
+        }
+    },
+    {
+        "pk": 125,
+        "model": "teachers.Person",
+        "fields": {
+            "educacode": "031327kvd",
+            "name": "Aitor",
+            "gender": "M",
+            "uniquename": "jmajovilla",
+            "last_name_1": "Urtasun",
+            "last_name_2": "Pacifico",
+            "email": "jmajovilla@educacion.navarra.es"
+        }
+    },
+    {
+        "pk": 126,
+        "model": "teachers.Person",
+        "fields": {
+            "educacode": "031329idr",
+            "name": "Ainhoa",
+            "gender": "M",
+            "uniquename": "ccastrique1",
+            "last_name_1": "Valle",
+            "last_name_2": "Garcia",
+            "email": "ccastrique1@educacion.navarra.es"
+        }
+    },
+    {
+        "pk": 127,
+        "model": "teachers.Person",
+        "fields": {
+            "educacode": "031370ssy",
+            "name": "Ainhoa",
+            "gender": "M",
+            "uniquename": "amarcosfra",
+            "last_name_1": "Ventura",
+            "last_name_2": "De La Vega",
+            "email": "amarcosfra@educacion.navarra.es"
+        }
+    },
+    {
+        "pk": 128,
+        "model": "teachers.Person",
+        "fields": {
+            "educacode": "031373kcs",
+            "name": "Adriana",
+            "gender": "H",
+            "uniquename": "amelerogal",
+            "last_name_1": "Zabalza",
+            "last_name_2": "Pereira",
+            "email": "amelerogal@educacion.navarra.es"
+        }
+    },
+    {
+        "pk": 129,
+        "model": "teachers.Person",
+        "fields": {
+            "educacode": "031374hft",
+            "name": "Adri\u00e1n",
+            "gender": "H",
+            "uniquename": "rmendioind",
+            "last_name_1": "Ziritza",
+            "last_name_2": "Nu\u00f1ez",
+            "email": "rmendioind@educacion.navarra.es"
+        }
+    },
+    {
+        "pk": 130,
+        "model": "teachers.Person",
+        "fields": {
+            "educacode": "031377iwc",
+            "name": "Adri\u00e1n",
+            "gender": "M",
+            "uniquename": "smorazazam",
+            "last_name_1": "Zubieta",
+            "last_name_2": "L\u00f3pez",
+            "email": "smorazazam@educacion.navarra.es"
+        }
+    }
+]

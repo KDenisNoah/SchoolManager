@@ -1,4 +1,4 @@
-{% extends "sm_base.html" %}
+{% extends "teachers/sm_base.html" %}
 {% block content %}
         <h1>Add student</h1>
              <form method="POST" enctype="multipart/form-data" class="form-horizontal col-md-7 col-md-offset-3  panel panel-default">
@@ -53,7 +53,9 @@
                         <td><input type="checkbox" name="student"  value="{{ student.id }}"></td>
                         <td><img src="{{ student.picture_url|default_if_none:'#' }}" height="42" width="42"></td>
                         <td> {{ student.last_name_1 }} {{student.last_name_2}}, {{student.name }}</td>
-                        <td>{{ student.gender }}</td></tr>
+                        <td>{{ student.gender }}</td>
+                        <td><a href="{% url 'student' student.pk %}">View</a></td>
+                        </tr>
                 {% endfor %}
         </table>
              <input type="submit" id="students_group" value="OK">

@@ -25,7 +25,7 @@ class Group(models.Model):
 class Grouping(models.Model):
     name = models.TextField(max_length=10, default='')
     course = models.ForeignKey(Course)
-    
+    #gruoups?
     def __str__(self):
         return self.name
 
@@ -36,13 +36,21 @@ def content_file_name(instance, filename):
 
 
 class Student(models.Model):
+    GENDER_CHOICES = (
+    ('H', 'Female'),
+    ('M', 'Male'),
+    )
     name = models.TextField(max_length=50, default='')
     last_name_1 = models.TextField(max_length=50, default='')
     last_name_2 = models.TextField(max_length=50, default='')
+    birthdate = models.DateField(null=True, blank=True)
+    educacode = models.TextField(max_length=10,unique=True)
+    uniquename = models.TextField(max_length=10,unique=True)
+    nationality = models.TextField(max_length=20,null=True, blank=True) #choices
+    gender = models.CharField(max_length=1,choices=GENDER_CHOICES)
+    email = models.EmailField(null=True, blank=True)
     #picture = models.ImageField(upload_to=content_file_name, default=None, blank=True, null=True)
     picture = models.ImageField(upload_to='students/', default=None, blank=True, null=True)
-    group = models.ForeignKey(Group, null=True, blank=True) #Those two should be in another model, groups will change each year.
-    groupings = models.ManyToManyField(Grouping, null=True, blank=True)
 
     def __str__(self):
         return self.name +" "+ self.last_name_1 +" "+ self.last_name_2

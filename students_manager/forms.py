@@ -7,11 +7,14 @@ class StudentForm(ModelForm):
 
     class Meta:
         model = Student
-        fields = ['name','last_name_1','last_name_2','picture','group','groupings']
+        fields = ['name','last_name_1','last_name_2','picture','birthdate','educacode','uniquename','nationality','gender','email','picture']
         widgets = {
             'name': forms.TextInput,
             'last_name_1': TextInput,
             'last_name_2': TextInput,
+            'uniquename': TextInput,
+            'educacode': TextInput,
+            'nationality': TextInput,
         }
         
         

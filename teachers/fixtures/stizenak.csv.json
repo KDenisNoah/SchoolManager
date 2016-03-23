@@ -1,0 +1,82 @@
+[
+    {
+        "pk": 121,
+        "model": "teachers.Staff",
+        "fields": {
+            "picture": "/media/staff/121.jpg",
+            "stype": "O"
+        }
+    },
+    {
+        "pk": 122,
+        "model": "teachers.Staff",
+        "fields": {
+            "picture": "/media/staff/122.jpg",
+            "stype": "O"
+        }
+    },
+    {
+        "pk": 123,
+        "model": "teachers.Staff",
+        "fields": {
+            "picture": "/media/staff/123.jpg",
+            "stype": "O"
+        }
+    },
+    {
+        "pk": 124,
+        "model": "teachers.Staff",
+        "fields": {
+            "picture": "/media/staff/124.jpg",
+            "stype": "G"
+        }
+    },
+    {
+        "pk": 125,
+        "model": "teachers.Staff",
+        "fields": {
+            "picture": "/media/staff/125.jpg",
+            "stype": "G"
+        }
+    },
+    {
+        "pk": 126,
+        "model": "teachers.Staff",
+        "fields": {
+            "picture": "/media/staff/126.jpg",
+            "stype": "G"
+        }
+    },
+    {
+        "pk": 127,
+        "model": "teachers.Staff",
+        "fields": {
+            "picture": "/media/staff/127.jpg",
+            "stype": "G"
+        }
+    },
+    {
+        "pk": 128,
+        "model": "teachers.Staff",
+        "fields": {
+            "picture": "/media/staff/128.jpg",
+            "stype": "G"
+        }
+    },
+    {
+        "pk": 129,
+        "model": "teachers.Staff",
+        "fields": {
+            "picture": "/media/staff/129.jpg",
+            "stype": "M"
+        }
+    },
+    {
+        "pk": 130,
+        "model": "teachers.Staff",
+        "fields": {
+            "picture": "/media/staff/130.jpg",
+            "stype": "C"
+        }
+    }
+]

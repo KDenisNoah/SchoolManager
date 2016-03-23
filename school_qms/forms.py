@@ -2,13 +2,16 @@ from django.forms import *  # ModelForm, TextInput, CheckboxSelectMultiple
 from django import forms
 from school_qms.models import *
 
+
 class processForm(ModelForm):
-    
+
     class Meta:
         model = Process
-        fields = ['name','code','rev','owner','description','scope','start_activity','providers','end_activity','customers','subprocess','instructions','legislation','date']
-        
-        
+        fields = ['name', 'code', 'rev', 'owner', 'description', 'scope',
+             'start_activity', 'providers', 'end_activity', 'customers',
+             'subprocess', 'instructions', 'legislation', 'date']
+
+
 class DocumentForm(ModelForm):
 
     class Meta:

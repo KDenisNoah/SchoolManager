@@ -1,13 +1,14 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Timetable</title>
-         <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Students Manager</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
         <!-- Latest compiled and minified CSS -->
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
         <!-- Optional theme -->
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap-theme.min.css">
         <link rel="stylesheet" href="http://getbootstrap.com/examples/starter-template/starter-template.css">
+   
     </head>
     <body>
     <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
@@ -24,8 +25,10 @@
         <div id="navbar" class="collapse navbar-collapse">
           <ul class="nav navbar-nav">
             <li><a href="{% url 'main_index' %}">Menu</a></li>
-                <li><a href="{% url 'timetable' %}">Home</a></li>
- {#                <li><a href="{% url 'tt_grouping' %}">Forms</a></li> #}
+                <li class="active"><a href="{% url 'student_manager' %}">Students Manage</a></li>
+                <li><a href="{% url 'students' %}">Students</a></li>
+                <li><a href="{% url 'teachers' %}">Teachers'</a></li>
+                <li><a href="{% url 'staff' %}">Staff</a></li>
           </ul>
         </div><!--/.nav-collapse -->
       </div>
