@@ -6,4 +6,5 @@ urlpatterns = patterns('',
     url(r'^student/(?P<student_id>[0-9]+)', 'orgperson.views.student_page', name='student'),
     url(r'^teachers/', 'orgperson.views.teachers_page', name='teachers'),
     url(r'^staff/', 'orgperson.views.staff_page', name='staff'),
+    url(r'^$', 'orgperson.views.staff_page', name='staff'),#FIXME Dirty hack to get / working
 )
