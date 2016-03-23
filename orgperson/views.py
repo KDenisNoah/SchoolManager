@@ -1,7 +1,7 @@
 from django.http import HttpResponse
 from django.shortcuts import redirect, render
-from teachers.models import Student, Teacher, Staff
-from teachers.forms import StudentForm, TeacherForm, StaffForm
+from orgperson.models import Student, Teacher, Staff
+from orgperson.forms import StudentForm, TeacherForm, StaffForm
 
 def students_page(request):
     if request.method == 'POST':
@@ -24,13 +24,13 @@ def students_page(request):
         f = StudentForm()
 
     students = Student.objects.all()
-    return render(request, 'teachers/students.html', {'students': students, 'form': f})
+    return render(request, 'orgperson/students.html', {'students': students, 'form': f})
 
 def student_page(request,student_id=None):
     if not student_id:
        redirect(students_page)
     student = Student.objects.filter(pk=student_id)[0]
-    return render(request, 'teachers/student.html', {'student': student})
+    return render(request, 'orgperson/student.html', {'student': student})
 
 
 def teachers_page(request):
@@ -54,7 +54,7 @@ def teachers_page(request):
         f = TeacherForm()
 
     teachers = Teacher.objects.all()
-    return render(request, 'teachers/teachers.html', {'teachers': teachers, 'form': f})
+    return render(request, 'orgperson/teachers.html', {'teachers': teachers, 'form': f})
 
 
 def staff_page(request):
@@ -78,4 +78,4 @@ def staff_page(request):
         f = StaffForm()
 
     staffs = Staff.objects.all()
-    return render(request, 'teachers/staff.html', {'staffs': staffs, 'form': f})
+    return render(request, 'orgperson/staff.html', {'staffs': staffs, 'form': f})

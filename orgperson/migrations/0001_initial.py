@@ -30,30 +30,30 @@ class Migration(migrations.Migration):
         migrations.CreateModel(
             name='Staff',
             fields=[
-                ('person_ptr', models.OneToOneField(primary_key=True, auto_created=True, to='teachers.Person', serialize=False, parent_link=True)),
+                ('person_ptr', models.OneToOneField(primary_key=True, auto_created=True, to='orgperson.Person', serialize=False, parent_link=True)),
             ],
             options={
             },
-            bases=('teachers.person',),
+            bases=('orgperson.person',),
         ),
         migrations.CreateModel(
             name='Student',
             fields=[
-                ('person_ptr', models.OneToOneField(primary_key=True, auto_created=True, to='teachers.Person', serialize=False, parent_link=True)),
+                ('person_ptr', models.OneToOneField(primary_key=True, auto_created=True, to='orgperson.Person', serialize=False, parent_link=True)),
                 ('birthdate', models.DateField(blank=True, null=True)),
                 ('nationality', models.TextField(blank=True, max_length=20, null=True)),
             ],
             options={
             },
-            bases=('teachers.person',),
+            bases=('orgperson.person',),
         ),
         migrations.CreateModel(
             name='Teacher',
             fields=[
-                ('person_ptr', models.OneToOneField(primary_key=True, auto_created=True, to='teachers.Person', serialize=False, parent_link=True)),
+                ('person_ptr', models.OneToOneField(primary_key=True, auto_created=True, to='orgperson.Person', serialize=False, parent_link=True)),
             ],
             options={
             },
-            bases=('teachers.person',),
+            bases=('orgperson.person',),
         ),
     ]

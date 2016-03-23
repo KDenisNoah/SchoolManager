@@ -1,6 +1,6 @@
 from django.forms import ModelForm, TextInput
 from django import forms
-from teachers.models import Teacher, Staff, Student
+from orgperson.models import Teacher, Staff, Student
 
 
 class TeacherForm(ModelForm):

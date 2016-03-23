@@ -42,7 +42,7 @@ INSTALLED_APPS = (
     'school_qms',
     'custom_forms',
     'timetable',
-    'teachers',
+    'orgperson',
 )
 
 MIDDLEWARE_CLASSES = (
