@@ -1,0 +1,17 @@
+{% extends "groups/groups_base.html" %}
+{% block content %}
+        <h1>Courses</h1>
+        <form method="POST">
+            <input name="course_name" id="id_new_course" placeholder="Enter a course" />
+            <input name="course_year" id="id_new_course_year" placeholder="Enter courses year" />
+                {% csrf_token %}
+            <input type="submit" id="new_course" value="OK">
+        </form>
+        <p>We can have a student without a group, pending. But we've said that each group belongs to a course and each student belongs to a group. So what can we do? A pending group for each course?</p>
+        <table id="id_list_table"  class="table table-striped">
+                  <tr><th>Course</th><th>Year</th></tr>
+                 {% for course in courses %}
+                    <tr><td>{{ course.name }}</td><td>{{ course.year }}</td><td><a href="{% url 'course' course.id %}">View</a></td></tr>
+                {% endfor %}
+        </table>
+{% endblock %}

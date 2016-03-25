@@ -1,0 +1,62 @@
+{% extends "groups/groups_base.html" %}
+{% block content %}
+        <h1>Add student</h1>
+             <form method="POST" enctype="multipart/form-data" class="form-horizontal col-md-7 col-md-offset-3  panel panel-default">
+                <div class="form-group">
+                    <label  class="col-md-2 control-label" for="{{form.code.id_for_name}}">Name:</label>
+                    {{form.name}}
+                </div>
+                <div class="form-group">
+                    <label  class="col-md-2 control-label" for="{{form.code.id_for_last_name_1}}">Last name 1:</label>
+                    {{form.last_name_1}}
+                </div>                
+                <div class="form-group">
+                    <label  class="col-md-2 control-label" for="{{form.code.id_for_last_name_2}}">Last name 2:</label>
+                    {{form.last_name_2}}
+                </div>                          
+                <div class="form-group">
+                    <label  class="col-md-2 control-label" for="{{form.code.id_for_uniquename}}">Uniquname:</label>
+                    {{form.uniquename}}
+                </div>
+                <div class="form-group">
+                    <label  class="col-md-2 control-label" for="{{form.code.id_for_educacode}}">Educacode:</label>
+                    {{form.educacode}}
+                </div>                
+                <div class="form-group">
+                    <label  class="col-md-2 control-label" for="{{form.code.id_for_picture}}">Picture:</label>
+                    {{form.picture}}
+                </div>                
+                <div class="form-group">
+                    <label  class="col-md-2 control-label" for="{{form.code.id_for_birthtdate}}">birthdate:</label>
+                    {{form.birthdate}}
+                </div>          
+                <div class="form-group">
+                    <label  class="col-md-2 control-label" for="{{form.code.id_for_email}}">Email:</label>
+                    {{form.email}}
+                </div>                
+                <div class="form-group">
+                    <label  class="col-md-2 control-label" for="{{form.code.id_for_gender}}">Gender:</label>
+                    {{form.gender}}
+                </div>       
+                <div class="form-group">
+                    <label  class="col-md-2 control-label" for="{{form.code.id_for_nationality}}">Nationality:</label>
+                    {{form.nationality}}
+                </div>                       
+                 <input type="submit" name="add_student" value="OK">
+                {% csrf_token %}
+             </form>
+        <form method="POST" class="col-md-12">
+        <h1>Student List</h1>
+        <table id="id_list_table"  class="table table-striped">
+                 {% for student in students %}
+                    <tr>
+                        <td><input type="checkbox" name="student"  value="{{ student.id }}"></td>
+                        <td><img src="{{ student.picture_url|default_if_none:'#' }}" height="42" width="42"></td>
+                        <td> {{ student.last_name_1 }} {{student.last_name_2}}, {{student.name }}</td>
+                        <td>{{ student.gender }}</td></tr>
+                {% endfor %}
+        </table>
+             <input type="submit" id="students_group" value="OK">
+            {% csrf_token %}
+        <form>
+{% endblock %}

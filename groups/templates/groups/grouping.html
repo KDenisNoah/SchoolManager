@@ -1,0 +1,20 @@
+{% extends "groups/groups_base.html" %}
+{% block content %}
+        <form method="POST">
+                 {{ form.as_p}}
+        <input type="submit" id="new_group" value="OK">
+                {% csrf_token %}
+        </form>
+        <h1>Grouping: {{ grouping.name }}</h1>
+        {% if students %}
+        <table id="id_list_table" class="table table-striped">
+        <caption>Students in this grouping</caption>
+                  <tr><th>pic</th><th>Student</th></tr>
+                 {% for student in students %}
+                    <tr><td><img src="{{ student.picture_url|default_if_none:'#' }}" height="42" width="42"></td><td>{{ student.name }} {{ student.last_name_1 }} {{ student.last_name_2 }}</td></tr>
+                {% endfor %}
+        </table>
+        {% else %}
+        <p>No students in this grouping</p>
+        {% endif %}
+{% endblock %}

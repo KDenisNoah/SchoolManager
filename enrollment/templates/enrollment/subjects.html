@@ -1,0 +1,20 @@
+{% extends "groups/groups_base.html" %}
+{% block content %}
+        <form method="POST"> 
+                 {{ form.as_p}}
+        <input type="submit" id="new_group" value="OK">
+                {% csrf_token %}
+        </form>
+        <h1>Subject: {{ subject.name }}</h1>
+        {% if subjects %}
+        <table id="id_list_table"  class="table table-striped">
+        <caption>Subjects</caption>
+                  <tr><th>Subject</th><th>Course</th></tr>
+                 {% for subject in subjects %}
+                    <tr><td>{{ subject.name }}</td><td>{{ subject.course }}</td></tr>
+                {% endfor %}
+        </table>
+        {% else %}
+        <p>No subjects</p>
+        {% endif %}
+{% endblock %}

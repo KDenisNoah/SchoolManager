@@ -1,0 +1,14 @@
+{% extends "groups/groups_base.html" %}
+{% block content %}
+        <h1>Groups</h1>
+        <form method="POST">
+                 {{ form.as_p}}
+        <input type="submit" id="new_group" value="OK">
+                {% csrf_token %}
+        </form>
+        <table id="id_list_table"  class="table table-striped">
+                 {% for group in groups %}
+                    <tr {% if not group.students.all %} class="danger" {% endif %}><td>{{ group.name }}</td><td><a href="{% url 'group' group.id %}">View</a></td><td><a href="{% url 'group_edit' group.id %}">Edit</a></td></tr>
+                {% endfor %}
+        </table>
+{% endblock %}
