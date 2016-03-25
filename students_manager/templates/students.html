@@ -47,7 +47,7 @@
              </form>
         <form method="POST" class="col-md-12">
         <h1>Student List</h1>
-        <table id="id_list_table">
+        <table id="id_list_table"  class="table table-striped">
                  {% for student in students %}
                     <tr>
                         <td><input type="checkbox" name="student"  value="{{ student.id }}"></td>

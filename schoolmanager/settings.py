@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/1.7/ref/settings/
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 import os
 BASE_DIR = os.path.dirname(os.path.dirname(__file__))
+#MEDIA_ROOT = os.path.join(BASE_DIR, '/media')
 MEDIA_ROOT = '/home/asier/projects/schoolmanager/schoolmanager/media'
 MEDIA_URL = '/media/'
 
@@ -43,6 +44,8 @@ INSTALLED_APPS = (
     'custom_forms',
     'timetable',
     'orgperson',
+    'groups',
+    'enrollment',
 )
 
 MIDDLEWARE_CLASSES = (

@@ -3,7 +3,7 @@
         <h1>Course: {{ course.name }}</h1>
         {% if groups %}
          <h1>Groups</h1>
-         <table id="id_group_table">
+         <table id="id_group_table"  class="table table-striped">
                  {% for group in groups %}
                     <tr><td>{{ group.name }}</td><td><a href="{% url 'group' group.id %}">View</a></td></tr>
                 {% endfor %}
@@ -13,7 +13,7 @@
         {% endif %}
         {% if groupings %}
         <h1>Groupings</h1>
-        <table id="id_groupings_table">
+        <table id="id_groupings_table"  class="table table-striped">
                  {% for grouping in groupings %}
                     <tr><td>{{ grouping.name }}</td><td><a href="{% url 'grouping' grouping.id %}">View</a></td></tr>
                 {% endfor %}
@@ -22,7 +22,8 @@
         <p>No groupings in this course</p>
         {% endif %}
         {% if students %}
-        <table id="id_list_table">
+        <table id="id_list_table"  class="table table-striped">
+        <caption>Students in this course</caption>
                   <tr><th>pic</th><th>Student</th><th>Group</th><th>Groupings</th></tr>
                  {% for student in students %}
                     <tr>
