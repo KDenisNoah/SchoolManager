@@ -13,7 +13,7 @@ def timetable_page(request):
         f = TimetableForm()
 
     timetable = Timetable.objects.all()
-    return render(request, 'timetable.html', {'timetable': timetable, 'form': f})
+    return render(request, 'timetable/timetable.html', {'timetable': timetable, 'form': f})
  
 
 def grouping_page(request,grouping_id=None):
@@ -22,6 +22,7 @@ def grouping_page(request,grouping_id=None):
     timetable = Timetable.objects.filter(grouping=grouping_id)
     grouping = Grouping.objects.filter(id=grouping_id)[0]
     matrix = {}
+    '''
     for t in timetable:
        if not t.hour-1 in matrix.keys():
           matrix[t.hour-1]={}
@@ -38,5 +39,7 @@ def grouping_page(request,grouping_id=None):
 
       
     #print(timetable)
-    return render(request, 'tgrouping.html', {'timetable': timetable, 'matrix':a, 'days':range(len(a)), 'hours':range(len(a[0])), 'grouping': grouping})
- 
+    return render(request, 'timetable/tgrouping.html', {'timetable': timetable, 'matrix':a, 'days':range(len(a)), 'hours':range(len(a[0])), 'grouping': grouping})
+''' 
+    print(timetable)
+    return render(request, 'timetable/tgrouping.html', {'timetable': timetable})

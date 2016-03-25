@@ -2,5 +2,15 @@
 {% block content %}
         <h1>{{student.name}}</h1>
         <h2> {{student.last_name_1}} {{student.last_name_2}}</h2>
-        <img src="{{student.picture}}">
+        <img src="{{student.picture}}" class="img-rounded">
+        {% if student.enrollment_set.all %}
+        <p>Subjects</p>
+        <ul>
+        {% for subject in student.enrollment_set.all.get.subjects.all %}
+	  <li>{{ subject.name }}</li>
+        {% endfor %}
+        </ul>
+        {% else %}
+        <p>No enrollments</p>
+        {% endif %}
 {% endblock %}

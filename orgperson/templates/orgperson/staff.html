@@ -47,7 +47,7 @@
                  {% for staff in staffs %}
                     <tr>
                         <td><input type="checkbox" name="staff"  value="{{ staff.id }}"></td>
-                        <td><img src="{{ staff.picture_url|default_if_none:'#' }}" height="42" width="42"></td>
+                        <td><img src="{{ staff.picture_url|default_if_none:'#' }}" height="42" width="42" class="img-rounded"></td>
                         <td> {{ staff.last_name_1 }} {{staff.last_name_2}}, {{staff.name }}</td>
                         <td>{{ staff.gender }}</td></tr>
                 {% endfor %}

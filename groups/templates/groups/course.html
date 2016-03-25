@@ -5,7 +5,7 @@
          <h1>Groups</h1>
          <table id="id_group_table"  class="table table-striped">
                  {% for group in groups %}
-                    <tr><td>{{ group.name }}</td><td><a href="{% url 'group' group.id %}">View</a></td></tr>
+                    <tr><td>{{ group.name }}</td><td>{{ group.students.all.count }}</td><td><a href="{% url 'group' group.id %}">View</a></td></tr>
                 {% endfor %}
         </table>
         {% else %}
@@ -15,7 +15,7 @@
         <h1>Groupings</h1>
         <table id="id_groupings_table"  class="table table-striped">
                  {% for grouping in groupings %}
-                    <tr><td>{{ grouping.name }}</td><td><a href="{% url 'grouping' grouping.id %}">View</a></td></tr>
+                    <tr><td>{{ grouping.name }}</td><td>{{ grouping.students.all.count }}</td><td><a href="{% url 'grouping' grouping.id %}">View</a></td></tr>
                 {% endfor %}
         </table>
         {% else %}
@@ -27,10 +27,10 @@
                   <tr><th>pic</th><th>Student</th><th>Group</th><th>Groupings</th></tr>
                  {% for student in students %}
                     <tr>
-                     <td><img src="{{ student.picture_url|default_if_none:'#' }}" height="42" width="42"></td>
+                     <td><img src="{{ student.picture_url|default_if_none:'#' }}" class="img-rounded" height="42" width="42"></td>
                      <td>{{ student.name }} {{ student.last_name_1 }} {{ student.last_name_2 }}</td>
-                     <td>{{ student.group }}</td>
-                      <td>{% for sg in  student.groupings.all %} {{ sg }} / {% endfor %} </td>
+                     <td>{{ student.group_set.first }}</td>
+                      <td>{% for sg in  student.grouping_set.all %} {{ sg }} / {% endfor %} </td>
                     </tr>
                 {% endfor %}
         </table>

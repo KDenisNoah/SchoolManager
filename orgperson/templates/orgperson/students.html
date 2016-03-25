@@ -47,11 +47,11 @@
              </form>
         <form method="POST" class="col-md-12">
         <h1>Student List</h1>
-        <table id="id_list_table">
+        <table id="id_list_table" class="table table-striped">
                  {% for student in students %}
                     <tr>
                         <td><input type="checkbox" name="student"  value="{{ student.id }}"></td>
-                        <td><img src="{{ student.picture_url|default_if_none:'#' }}" height="42" width="42"></td>
+                        <td><img src="{{ student.picture_url|default_if_none:'#' }}" class="img-rounded" height="42" width="42"></td>
                         <td> {{ student.last_name_1 }} {{student.last_name_2}}, {{student.name }}</td>
                         <td>{{ student.gender }}</td>
                         <td><a href="{% url 'student' student.pk %}">View</a></td>

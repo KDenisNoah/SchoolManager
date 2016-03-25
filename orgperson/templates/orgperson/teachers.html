@@ -43,7 +43,7 @@
                  {% for teacher in teachers %}
                     <tr>
                         <td><input type="checkbox" name="teacher"  value="{{ teacher.id }}"></td>
-                        <td><img src="{{ teacher.picture_url|default_if_none:'#' }}" height="42" width="42"></td>
+                        <td><img src="{{ teacher.picture_url|default_if_none:'#' }}" height="42" width="42" class="img-rounded"></td>
                         <td> {{ teacher.last_name_1 }} {{teacher.last_name_2}}, {{teacher.name }}</td>
                         <td>{{ teacher.gender }}</td></tr>
                 {% endfor %}

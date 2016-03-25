@@ -1,6 +1,14 @@
-{% extends "tmt_base.html" %}
+{% extends "timetable/tmt_base.html" %}
 {% block content %}
         <h1>Timetable for grouping: {{ grouping.name }}</h1>
+        {% regroup timetable by hour as days %}
+        {{ days }}
+        <table id="id_timetable_table" border="1">
+        <tr><th>1</th><th>2</th><th>3</th><th>4</th><th>5</th></tr>
+         {% for day in days.list %}
+        <td>{{ day }}</td>
+         {% endfor %}
+         </table>
         <table id="id_timetable_table" border="1">
          <tr>
             <td>Hour</td>

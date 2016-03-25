@@ -7,8 +7,9 @@
                 {% csrf_token %}
         </form>
         <table id="id_list_table"  class="table table-striped">
+        <tr><th>Group</th><th>Students number</th><th>View</th><th>Edit</th></tr>
                  {% for group in groups %}
-                    <tr {% if not group.students.all %} class="danger" {% endif %}><td>{{ group.name }}</td><td><a href="{% url 'group' group.id %}">View</a></td><td><a href="{% url 'group_edit' group.id %}">Edit</a></td></tr>
+                    <tr {% if not group.students.all %} class="danger" {% endif %}><td>{{ group.name }}</td><td>{{ group.students.all.count }}</td><td><a href="{% url 'group' group.id %}">View</a></td><td><a href="{% url 'group_edit' group.id %}">Edit</a></td></tr>
                 {% endfor %}
         </table>
 {% endblock %}

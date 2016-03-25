@@ -40,7 +40,7 @@ def groupings_page(request):
           d[g.course] = []
        d[g.course].append(g)
        print(d)
-    return render(request, 'groupings.html', {'groupings': d, 'form': f})
+    return render(request, 'groups/groupings.html', {'groupings': d, 'form': f})
 
 def group_page(request,group_id=None):
     if request.method == 'POST':
@@ -55,7 +55,7 @@ def group_page(request,group_id=None):
         f = GroupMembershipForm()
     group = Group.objects.filter(pk=group_id)[0] #if grouping_id does not exist raises an error because [0] of none (same in group)
     students = Student.objects.filter(group=group)
-    return render(request, 'group.html', {'group': group,'form':f, 'students': students})#FIXME when a student is added in a grouping redirect to that group?
+    return render(request, 'groups/group.html', {'group': group,'form':f, 'students': students})#FIXME when a student is added in a grouping redirect to that group?
 
 def grouping_page(request,grouping_id=None):
     if request.method == 'POST':
@@ -70,7 +70,7 @@ def grouping_page(request,grouping_id=None):
         f = GroupingMembershipForm()
     grouping = Grouping.objects.filter(pk=grouping_id)[0] #if grouping_id does not exist raises an error because [0] of none (same in group)
     students = Student.objects.filter(grouping=grouping)
-    return render(request, 'grouping.html', {'grouping': grouping,'form':f, 'students': students})#FIXME when a student is added in a grouping redirect to that grouping?
+    return render(request, 'groups/grouping.html', {'grouping': grouping,'form':f, 'students': students})#FIXME when a student is added in a grouping redirect to that grouping?
 
 def course_page(request,course_id=None):
     if not course_id:
@@ -79,7 +79,7 @@ def course_page(request,course_id=None):
     groups = Group.objects.filter(course=course_id)
     groupings = Grouping.objects.filter(course=course_id) #if grouping_id does not exist raises an error because [0] of none (same in group)
     students = Student.objects.filter(group=groups)
-    return render(request, 'course.html', {'course': course, 'groups': groups,'groupings': groupings, 'students': students})
+    return render(request, 'groups/course.html', {'course': course, 'groups': groups,'groupings': groupings, 'students': students})
  
 def courses_page(request):
     if request.method == 'POST':
@@ -87,4 +87,4 @@ def courses_page(request):
         return redirect(courses_page)
 
     courses = Course.objects.all()
-    return render(request, 'courses.html', {'courses': courses})
+    return render(request, 'groups/courses.html', {'courses': courses})

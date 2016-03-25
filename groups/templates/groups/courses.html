@@ -11,7 +11,7 @@
         <table id="id_list_table"  class="table table-striped">
                   <tr><th>Course</th><th>Year</th></tr>
                  {% for course in courses %}
-                    <tr><td>{{ course.name }}</td><td>{{ course.year }}</td><td><a href="{% url 'course' course.id %}">View</a></td></tr>
+                    <tr><td>{{ course.name }}</td><td>{{ course.number }}</td><td>{{ course.enrollment_set.all.count }}</td><td><a href="{% url 'course' course.id %}">View</a></td></tr>
                 {% endfor %}
         </table>
 {% endblock %}
