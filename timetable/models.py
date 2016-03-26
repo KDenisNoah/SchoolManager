@@ -20,8 +20,8 @@ class Timetable(models.Model):
     ('5','12.40-13.35'),
     ('6','13.35-14.30'),
     )#FIXME:Harcoded??
-  hour = models.CharField(max_length=2,choices=DAY_CHOICES)
-  day = models.CharField(max_length=2,choices=HOUR_CHOICES)
+  hour = models.CharField(max_length=2,choices=HOUR_CHOICES)
+  day = models.CharField(max_length=2,choices=DAY_CHOICES)
   grouping = models.ForeignKey(Grouping)
   subject = models.ForeignKey(Subject)
   teacher = models.ForeignKey(Teacher) #FIXME: Instead of teacher it should be teacher's post, when a substitute comes it inherits the post. And teacher's post can change each year. Sometimes can be more than one teacher, so manytomanyfield should be used
