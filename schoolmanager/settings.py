@@ -46,6 +46,7 @@ INSTALLED_APPS = (
     'orgperson',
     'groups',
     'enrollment',
+    'django_extensions',
 )
 
 MIDDLEWARE_CLASSES = (

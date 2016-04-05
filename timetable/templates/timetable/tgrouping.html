@@ -1,5 +1,56 @@
 {% extends "timetable/tmt_base.html" %}
+{% block head %}
+<script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
+<script type="text/javascript">
+    function addsession(day,hour){
+        $.ajax({
+        type: "POST",
+        url: "{% url 'timetableajax' %}", 
+        data: {'day': day, 'hour': hour, 'csrfmiddlewaretoken': '{{ csrf_token }}'},
+        success : function(data) {
+             $('#ajaxform').html(data);
+             document.getElementById('ajaxpopup').style.display='block';
+             document.getElementById('fade').style.display='block';
+             $('html, body').animate({ scrollTop: 0 }, 0);
+	    }
+	});
+    }
+    function close(){
+	document.getElementById('ajaxpopup').style.display='none';
+        document.getElementById('fade').style.display='none';
+    }
+</script>
+    <style>
+    .black_overlay{
+        display: none;
+        position: absolute;
+        top: 0%;
+        left: 0%;
+        width: 100%;
+        height: 100%;
+        background-color: black;
+        z-index:1001;
+        -moz-opacity: 0.8;
+        opacity:.80;
+        filter: alpha(opacity=80);
+    }
+    .white_content {
+        display: none;
+        position: absolute;
+        top: 25%;
+        left: 25%;
+        width: 50%;
+        height: 55%;
+        padding: 16px;
+        border: 16px solid gray;
+        background-color: white;
+        z-index:1002;
+        overflow: auto;
+    }
+</style>
+{% endblock%}
 {% block content %}
+{% csrf_token %}
 <h1>Does not work if received timetable is not full...</h1>
 <h2>What have to be done to skip certain hours if there is not assignement</h2>
         <h1>Timetable for grouping: {{ grouping.name }}</h1>
@@ -29,7 +80,7 @@
          <tr>
             <td> {% for k in h.0 %}{{k.hour}}{% endfor %}</td>
             {% for d in h %}
-            <td>{% for s in d %}<b>{{ s.subject }}</b>{% endfor %}</td>
+            <td>{% for s in d %}<b>{{ s.subject }}</b>{% endfor %}<br /><input type="button" class="btn btn-primary btn-xs" value="+" onclick="addsession('{{d.0.day}}','{{d.0.hour}}')" /></td>
             {% endfor %}
          </tr>
          {% endfor %}
@@ -44,4 +95,17 @@
         </table>
         
         
+        
+        <div id='ajaxpopup' class='white_content'>
+	  <div class="panel panel-primary">
+	    <div class="panel-heading">
+	      <h3 class="panel-title">Panel title</h3>
+	    </div>
+	    <div class="panel-body">
+	      <div id='ajaxform'></div>
+		<button class="btn btn-default" onclick="document.getElementById('ajaxpopup').style.display='none';document.getElementById('fade').style.display='none';">Close</button>
+	      </div>
+	    </div>
+	  </div>
+        <div id='fade' class='black_overlay'></div>
 {% endblock %}

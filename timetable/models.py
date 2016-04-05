@@ -9,7 +9,7 @@ class Timetable(models.Model):
     ('Tu','Tuesday'),
     ('We','Wednesday'),
     ('Th','Thursday'),
-    ('F','Friday'),
+    ('Fr','Friday'),
     )
   HOUR_CHOICES = (
     ('1','8.30-9.25'),

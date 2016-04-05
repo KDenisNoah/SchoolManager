@@ -1,0 +1,5 @@
+ <form method="POST" class="form-horizontal" action="{% url 'timetableajax' %}">
+  {{ form.as_p}}
+  <button class="btn btn-default" type="submit" id="new_timetable" value="OK">OK</button>
+  {% csrf_token %}
+</form>
