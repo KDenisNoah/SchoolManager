@@ -19,7 +19,7 @@ def groups_page(request,group_id=None):
     else:
         f = GroupForm()
         
-    groups = Group.objects.all()
+    groups = Group.objects.all().prefetch_related('students')
     return render(request, 'groups/groups.html', {'groups': groups, 'form': f})
 
 
@@ -33,7 +33,7 @@ def groupings_page(request):
         f = GroupingForm()
    
    
-    groupings = Grouping.objects.all()
+    groupings = Grouping.objects.all().prefetch_related('students','course')
     d = {}
     for g in groupings:
        if not g.course in d.keys():
@@ -76,9 +76,9 @@ def course_page(request,course_id=None):
     if not course_id:
        redirect(courses_page)
     course = Course.objects.filter(pk=course_id)[0]
-    groups = Group.objects.filter(course=course_id)
-    groupings = Grouping.objects.filter(course=course_id) #if grouping_id does not exist raises an error because [0] of none (same in group)
-    students = Student.objects.filter(group=groups)
+    groups = Group.objects.filter(course=course_id).prefetch_related('students')
+    groupings = Grouping.objects.filter(course=course_id).prefetch_related('students') #if grouping_id does not exist raises an error because [0] of none (same in group)
+    students = Student.objects.filter(group=groups).prefetch_related('group_set','grouping_set')
     return render(request, 'groups/course.html', {'course': course, 'groups': groups,'groupings': groupings, 'students': students})
  
 def courses_page(request):
@@ -86,5 +86,5 @@ def courses_page(request):
         Course.objects.create(name=request.POST['course_name'],year=request.POST['course_year'])
         return redirect(courses_page)
 
-    courses = Course.objects.all()
+    courses = Course.objects.all().prefetch_related('enrollment_set')
     return render(request, 'groups/courses.html', {'courses': courses})

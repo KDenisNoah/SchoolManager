@@ -29,7 +29,7 @@
                     <tr>
                      <td><img src="{{ student.picture_url|default_if_none:'#' }}" class="img-rounded" height="42" width="42"></td>
                      <td>{{ student.name }} {{ student.last_name_1 }} {{ student.last_name_2 }}</td>
-                     <td>{{ student.group_set.first }}</td>
+                     <td>{{ student.group_set.0 }}</td>
                       <td>{% for sg in  student.grouping_set.all %} {{ sg }} / {% endfor %} </td>
                     </tr>
                 {% endfor %}

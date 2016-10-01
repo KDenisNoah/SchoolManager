@@ -13,7 +13,7 @@ def timetable_page(request):
     else:
         f = TimetableForm()
 
-    timetable = Timetable.objects.all()
+    timetable = Timetable.objects.all().prefetch_related('teacher','subject','grouping')
     return render(request, 'timetable/timetable.html', {'timetable': timetable, 'form': f})
 
 from django.views.decorators.csrf import csrf_exempt

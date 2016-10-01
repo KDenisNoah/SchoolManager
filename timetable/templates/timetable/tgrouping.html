@@ -51,21 +51,6 @@
 {% endblock%}
 {% block content %}
 {% csrf_token %}
-<h1>Does not work if received timetable is not full...</h1>
-<h2>What have to be done to skip certain hours if there is not assignement</h2>
-        <h1>Timetable for grouping: {{ grouping.name }}</h1>
-        {% regroup timetable|dictsort:"hour" by hour as hours_list %}
-        <table id="id_timetable_table"  class="table table-striped table-bordered">
-        <tr><th>Hour</th><th>Monday</th><th>Tuesday</th><th>Wednesday</th><th>Thursday</th><th>Friday</th></tr>
-         {% for hour in hours_list %}
-         <tr>
-        <td>{{ hour.grouper }}</td>
-        {% for dayhour in hour.list %}
-        <td><b>{{ dayhour.subject.abv }}</b><br /><i>{{ dayhour.teacher}}</i></td>
-        {% endfor %}
-        </tr>
-         {% endfor %}
-         </table>
          <p>I don't know how to set hours name properly. I'm using forloop.counter, but I would like to selec the names from the database</p>
          <p>{% for k in h.0 %}{{k.hour}}{% endfor %} does not work either if the first h element is null. Also if any row is empty it doesn't
          display it's hour</p>
@@ -94,6 +79,21 @@
                 {% endfor %}
         </table>
         
+<h1>Does not work if received timetable is not full...</h1>
+<h2>What have to be done to skip certain hours if there is not assignement</h2>
+        <h1>Timetable for grouping: {{ grouping.name }}</h1>
+        {% regroup timetable|dictsort:"hour" by hour as hours_list %}
+        <table id="id_timetable_table"  class="table table-striped table-bordered">
+        <tr><th>Hour</th><th>Monday</th><th>Tuesday</th><th>Wednesday</th><th>Thursday</th><th>Friday</th></tr>
+         {% for hour in hours_list %}
+         <tr>
+        <td>{{ hour.grouper }}</td>
+        {% for dayhour in hour.list %}
+        <td><b>{{ dayhour.subject.abv }}</b><br /><i>{{ dayhour.teacher}}</i></td>
+        {% endfor %}
+        </tr>
+         {% endfor %}
+         </table>
         
         
         <div id='ajaxpopup' class='white_content'>

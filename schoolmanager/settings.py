@@ -47,6 +47,7 @@ INSTALLED_APPS = (
     'groups',
     'enrollment',
     'django_extensions',
+    'debug_toolbar',
 )
 
 MIDDLEWARE_CLASSES = (
